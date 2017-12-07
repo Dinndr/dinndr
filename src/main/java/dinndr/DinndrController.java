@@ -1,8 +1,8 @@
-package dinndrpackage;
+package dinndr;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class DishRepo {
+public class DinndrController {
 
 }
