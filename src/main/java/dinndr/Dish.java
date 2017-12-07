@@ -16,7 +16,9 @@ public class Dish {
 	public Dish(String name) {
 		this.name = name;
 	}
-	
+	public Dish() {
+		
+	}
 	public Long getId() {
 		return id;
 	}

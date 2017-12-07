@@ -1,8 +1,28 @@
 package dinndr;
 
-import org.springframework.stereotype.Component;
+import javax.annotation.Resource;
 
-@Component
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
 public class DinndrController {
+	
+	@Resource
+	private DishRepo dishRepo;
+	
+//	@RequestMapping("/dish")
+//	public String fetchDish(@RequestParam("id") long id, Model model) {
+//		model.addAttribute("dish", dishRepo.findOne(id));
+//		return "dish";
+//	}
 
+	@RequestMapping("/dishes")
+	public String fetchDishes(Model model) {
+		model.addAttribute("dishes", dishRepo.findAll());
+		return "dishes";
+	}
+	
 }
