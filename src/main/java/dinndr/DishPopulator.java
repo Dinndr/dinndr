@@ -18,7 +18,5 @@ public class DishPopulator implements CommandLineRunner{
 		Dish spaghetti = new Dish("Spaghetti");
 		spaghetti = dishRepo.save(spaghetti);
 	}
-
-	
 	
 }
