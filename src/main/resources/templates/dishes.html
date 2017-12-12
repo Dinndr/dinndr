@@ -2,7 +2,7 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Dinndr</title>
+<title>Dinndr</title>
 </head>
 <body>
 <h1>Dinndr</h1>
@@ -13,6 +13,13 @@
 		<li th:text="${dish.description}"></li>
 		<li th:text="${dish.price}"></li>
 	</ul>	
+  	<input type="button" value="I'm Interested!" id="viewMoreButton" />
+	<p id="information"></p>
 </div>
 </body>
+<script>
+document.getElementById("viewMoreButton").addEventListener("click", function(){
+	  document.getElementById("information").innerHTML = "To order visit their website.";
+	});
+</script>
 </html>
