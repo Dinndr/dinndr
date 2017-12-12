@@ -5,34 +5,28 @@
 <title>Dinndr</title>
 </head>
 <body>
-<<<<<<< HEAD
-<h1>Dinndr</h1>
-<div class="dishqueue" th:each="dish: ${dishes}">
-	<h2 class="dishname" th:text="${dish.name}"></h2>
-	<h4 th:text="${dish.restaurant}"></h4>
-	<ul>
-		<li th:text="${dish.description}"></li>
-		<li th:text="${dish.price}"></li>
-	</ul>	
-  	<input type="button" value="I'm Interested!" id="viewMoreButton" />
-	<p id="information"></p>
-</div>
-=======
 	<h1>Dinndr</h1>
-	<p th:each="dish: ${dishes}" th:text="${dish.name}"></p>
+	<div class="dishqueue" th:each="dish: ${dishes}">
+		<h2 class="dishname" th:text="${dish.name}"></h2>
+		<h4 th:text="${dish.restaurant}"></h4>
+		<ul>
+			<li th:text="${dish.description}"></li>
+			<li th:text="${dish.price}"></li>
+			<li class="dish-photo"><img th:src="${dish.image}" /></li>
+		</ul>
+		<input type="button" value="I'm Interested!" id="viewMoreButton" />
+		<p id="information"></p>
 
-	<div class="dish-photo">
-		<img th:each="dish: ${dishes}" th:src="${dish.image}" />
 	</div>
 
-
-
-
->>>>>>> viewimage
 </body>
 <script>
-document.getElementById("viewMoreButton").addEventListener("click", function(){
-	  document.getElementById("information").innerHTML = "To order visit their website.";
-	});
+	document
+			.getElementById("viewMoreButton")
+			.addEventListener(
+					"click",
+					function() {
+						document.getElementById("information").innerHTML = "To order visit their website.";
+					});
 </script>
 </html>
