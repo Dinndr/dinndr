@@ -24,7 +24,7 @@ public class DishPersistenceTest {
 	
 	@Test
 	public void shouldSaveADish() {
-		Dish dish = new Dish("Lasagna");
+		Dish dish = new Dish("Lasagna", null, null, null, null, null, null, null, null, null);
 		
 		dish = repo.save(dish);
 		long generatedId = dish.getId();
