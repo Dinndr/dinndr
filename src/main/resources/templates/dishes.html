@@ -8,11 +8,11 @@
 	<h1>Dinndr</h1>
 	<div class="dishqueue" th:each="dish: ${dishes}">
 		<h2 class="dishname" th:text="${dish.name}"></h2>
-		<h4 th:text="${dish.restaurant}"></h4>
+		<h4 th:text="${dish.restaurant.getName()}"></h4>
 		<ul>
 			<li th:text="${dish.description}"></li>
 			<li th:text="${dish.price}"></li>
-			<li class="dish-photo"><img th:src="${dish.image}" /></li>
+			<li class="dish-photo"><img th:src="${dish.image}" style="width: 200px; height: 180px" /></li>
 		</ul>
 		<input type="button" value="I'm Interested!" id="viewMoreButton" />
 		<p id="information"></p>

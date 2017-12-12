@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Dish {
@@ -16,7 +17,6 @@ public class Dish {
 
 	@Lob
 	private String description;
-	private String restaurant;
 	private String price;
 	private String image;
 	private String tagOne;
@@ -25,7 +25,10 @@ public class Dish {
 	private String tagFour;
 	private String tagFive;
 
-	public Dish(String name, String description, String restaurant, String price, String image, String tagOne,
+	@ManyToOne
+	private Restaurant restaurant;
+
+	public Dish(String name, String description, Restaurant restaurant, String price, String image, String tagOne,
 			String tagTwo, String tagThree, String tagFour, String tagFive) {
 		this.name = name;
 		this.description = description;
@@ -55,7 +58,7 @@ public class Dish {
 		return description;
 	}
 
-	public String getRestaurant() {
+	public Restaurant getRestaurant() {
 		return restaurant;
 	}
 
