@@ -6,7 +6,13 @@
 </head>
 <body>
 <h1>Dinndr</h1>
-<p th:each="dish: ${dishes}"
-	th:text="${dish.name}"></p>
+<div class="dishqueue" th:each="dish: ${dishes}">
+	<h2 class="dishname" th:text="${dish.name}"></h2>
+	<h4 th:text="${dish.restaurant}"></h4>
+	<ul>
+		<li th:text="${dish.description}"></li>
+		<li th:text="${dish.price}"></li>
+	</ul>	
+</div>
 </body>
 </html>
