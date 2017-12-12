@@ -7,12 +7,13 @@ import javax.persistence.Lob;
 
 @Entity
 public class Dish {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String name;
+<<<<<<< HEAD
 	@Lob
 	private String description;
 	private String restaurant;
@@ -35,10 +36,20 @@ public class Dish {
 		this.tagThree = tagThree;
 		this.tagFour = tagFour;
 		this.tagFive = tagFive;
+=======
+
+	private String image;
+
+	public Dish(String name, String image) {
+		this.name = name;
+		this.image = image;
+>>>>>>> viewimage
 	}
+
 	public Dish() {
-		
+
 	}
+
 	public Long getId() {
 		return id;
 	}
@@ -46,6 +57,7 @@ public class Dish {
 	public String getName() {
 		return name;
 	}
+<<<<<<< HEAD
 	public String getDescription() {
 		return description;
 	}
@@ -74,4 +86,10 @@ public class Dish {
 		return tagFive;
 	}
 	
+=======
+
+	public String getImage() {
+		return image;
+	}
+>>>>>>> viewimage
 }

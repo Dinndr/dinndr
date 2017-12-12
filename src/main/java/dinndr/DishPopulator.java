@@ -6,14 +6,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DishPopulator implements CommandLineRunner{
+public class DishPopulator implements CommandLineRunner {
 
-	
 	@Resource
 	private DishRepo dishRepo;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
+<<<<<<< HEAD
 		
 		Dish bonelessChicken = new Dish("Boneless Chicken","Boneless chicken pieces marinated in yogurt, fresh spices, and lemon juice, grilled on skewers in tandoor.","Tandoori Grill","$10.00","/images/tg-tandoorplatter.jpg","Chicken","Rice","Desi","Savory","Platter");
 		bonelessChicken = dishRepo.save(bonelessChicken);
@@ -86,6 +86,11 @@ public class DishPopulator implements CommandLineRunner{
 		Dish tacosDePescado = new Dish("Tacos de Pescado","Fish tacos, broccoli cole slaw, chipotle sauce and lime","El Vaquero","$9.99","/images/ev-tacos-de-pescado.jpg","Dinner","Lunch","Broccoli","Mexican","Fish");
 		tacosDePescado = dishRepo.save(tacosDePescado);
 		
+=======
+
+		Dish spaghetti = new Dish("Spaghetti", "/images/cc-chicken.jpg");
+		spaghetti = dishRepo.save(spaghetti);
+>>>>>>> viewimage
 	}
-	
+
 }
