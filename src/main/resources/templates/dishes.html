@@ -2,11 +2,18 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Dinndr</title>
+<title>Dinndr</title>
 </head>
 <body>
-<h1>Dinndr</h1>
-<p th:each="dish: ${dishes}"
-	th:text="${dish.name}"></p>
+	<h1>Dinndr</h1>
+	<p th:each="dish: ${dishes}" th:text="${dish.name}"></p>
+
+	<div class="dish-photo">
+		<img th:each="dish: ${dishes}" th:src="${dish.image}" />
+	</div>
+
+
+
+
 </body>
 </html>
