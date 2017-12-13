@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class DishPopulator implements CommandLineRunner {
 
 	@Resource
-	private DishRepo dishRepo;
+	public DishRepo dishRepo;
 
 	@Override
 	public void run(String... args) throws Exception {

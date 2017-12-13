@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DinndrController {
 	
 	@Resource
-	private DishRepo dishRepo;
+	public DishRepo dishRepo;
 	
-//	@RequestMapping("/dish")
-//	public String fetchDish(@RequestParam("id") long id, Model model) {
-//		model.addAttribute("dish", dishRepo.findOne(id));
-//		return "dish";
-//	}
+	@RequestMapping("/viewdish")
+	public String showDish (Model model) {
+		model.addAttribute("modelDish", dishRepo.findOne(1L));
+		return "singledish";
+	}
 
 	@RequestMapping("/dishes")
 	public String fetchDishes(Model model) {
