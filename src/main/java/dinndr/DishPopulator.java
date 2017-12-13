@@ -110,7 +110,6 @@ public class DishPopulator implements CommandLineRunner {
 		elManjarVaquero = dishRepo.save(elManjarVaquero);
 		Dish tacosDePescado = new Dish("Tacos de Pescado","Fish tacos, broccoli cole slaw, chipotle sauce and lime",elVaquero,"$9.99","/images/ev-tacos-de-pescado.jpg","Dinner","Lunch","Broccoli","Mexican","Fish");
 		tacosDePescado = dishRepo.save(tacosDePescado);
-		
 
 	}
 
