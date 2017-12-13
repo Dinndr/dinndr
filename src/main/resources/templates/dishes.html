@@ -17,7 +17,7 @@
 		<button onclick="viewMore()">I'm Interested!</button>
 		<button onclick="nextPlease()">Meh.</button>
 
-		<div class="info">
+		<div class="info" style='display: none'>
 			<ul>
 				<li th:text="${dish.description}"></li>
 				<li th:text="${dish.price}"></li>
@@ -25,7 +25,7 @@
 			</ul>
 		</div>
 
-		<div class="next">What's next?</div>
+		<div class="next" style='display: none'>What's next?</div>
 
 	</div>
 
