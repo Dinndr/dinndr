@@ -23,7 +23,6 @@ public class Tag {
 		return id;
 	}
 
-
 	public Set<Dish> getTaggedBy() {
 		return taggedBy;
 	}
@@ -34,6 +33,7 @@ public class Tag {
 	public Tag(String taste) {
 		this.taste = taste;
 	}
+
 	public String getTaste() {
 		return taste;
 	}

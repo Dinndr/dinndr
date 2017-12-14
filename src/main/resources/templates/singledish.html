@@ -11,7 +11,8 @@
 	<div class="viewimage">
 		<div class="singleimage">
 
-			<img th:src="${modelDish.image}" style="width: 400px; height: 380px" /><br></br>
+			<img th:src="${modelDish.image}" alt="${modelDish.name}"
+				style="width: 400px; height: 380px" /><br></br>
 
 			<button onclick="viewMore()">I'm Interested!</button>
 			<button onclick="nextPlease()">Meh.</button>
@@ -22,7 +23,8 @@
 					<li th:text="${modelDish.restaurant.getName()}"></li>
 				</ul>
 			</div>
-			<div class="next" style='display: none'><img th:src="${modelNextDish.image}" />
+			<div class="next" style='display: none'>
+				<img th:src="${modelNextDish.image}" />
 			</div>
 		</div>
 	</div>

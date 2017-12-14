@@ -53,67 +53,67 @@ public class DishPopulator implements CommandLineRunner {
 				"2700 North High Street, Columbus, OH 43202",
 				"Mon. - Fri. 7:30AM - 10:00PM, Sat. - Sun. 9:00AM - 10:00PM", "(614) 447-9400", "Y");
 		acre = restaurantRepo.save(acre);
-		
+
 		Tag chicken = new Tag("chicken");
 		chicken = tagRepo.save(chicken);
-		
+
 		Tag rice = new Tag("rice");
 		rice = tagRepo.save(rice);
-		
+
 		Tag spicy = new Tag("spicy");
 		spicy = tagRepo.save(spicy);
-		
+
 		Tag savory = new Tag("savory");
 		savory = tagRepo.save(savory);
-		
+
 		Tag platter = new Tag("platter");
 		platter = tagRepo.save(platter);
-		
+
 		Tag meat = new Tag("meat");
 		meat = tagRepo.save(meat);
-		
+
 		Tag gravy = new Tag("gravy");
 		gravy = tagRepo.save(gravy);
-		
+
 		Tag vegetarian = new Tag("vegetarian");
 		vegetarian = tagRepo.save(vegetarian);
-		
+
 		Tag smallPlate = new Tag("small-plate");
 		smallPlate = tagRepo.save(smallPlate);
-		
+
 		Tag sandwich = new Tag("sandwich");
 		sandwich = tagRepo.save(sandwich);
-		
+
 		Tag wrap = new Tag("wrap");
 		wrap = tagRepo.save(wrap);
-		
+
 		Tag fresh = new Tag("fresh");
 		fresh = tagRepo.save(fresh);
-		
+
 		Tag sweet = new Tag("sweet");
 		sweet = tagRepo.save(sweet);
-		
+
 		Tag dessert = new Tag("dessert");
 		dessert = tagRepo.save(dessert);
-		
+
 		Tag rich = new Tag("rich");
 		rich = tagRepo.save(rich);
-		
+
 		Tag creamy = new Tag("creamy");
 		creamy = tagRepo.save(creamy);
-		
+
 		Tag cheese = new Tag("cheese");
 		cheese = tagRepo.save(cheese);
-		
+
 		Tag potatoes = new Tag("potatoes");
 		potatoes = tagRepo.save(potatoes);
-		
+
 		Tag beef = new Tag("beef");
 		beef = tagRepo.save(beef);
-		
+
 		Tag salad = new Tag("salad");
-		salad = tagRepo.save(salad);	
-		
+		salad = tagRepo.save(salad);
+
 		Tag fried = new Tag("fried");
 		fried = tagRepo.save(fried);
 
@@ -148,7 +148,7 @@ public class DishPopulator implements CommandLineRunner {
 		tomato = tagRepo.save(tomato);
 
 		Tag pasta = new Tag("pasta");
-		pasta= tagRepo.save(pasta);
+		pasta = tagRepo.save(pasta);
 
 		Tag nutty = new Tag("nutty");
 		nutty = tagRepo.save(nutty);
@@ -158,8 +158,7 @@ public class DishPopulator implements CommandLineRunner {
 
 		Dish bonelessChicken = new Dish("Boneless Chicken",
 				"Boneless chicken pieces marinated in yogurt, fresh spices, and lemon juice, grilled on skewers in tandoor.",
-				tandooriGrill, "$10.00", "/images/tg-tandoorplatter.jpg", chicken, rice, spicy, savory,
-				platter, meat);
+				tandooriGrill, "$10.00", "/images/tg-tandoorplatter.jpg", chicken, rice, spicy, savory, platter, meat);
 		bonelessChicken = dishRepo.save(bonelessChicken);
 		Dish goatQormaCurry = new Dish("Goat Qorma Curry",
 				"Marinated succulent meat cooked with fried onion, delicately flavored with saffron and simmered in a blend of yogurt and house spices. korma is a braising technique where the meat is first cooked briskly using high heat and then subjected to long, slow cooking using moist eat and minimum of added liquid",
@@ -167,8 +166,7 @@ public class DishPopulator implements CommandLineRunner {
 		goatQormaCurry = dishRepo.save(goatQormaCurry);
 		Dish chanaMasala = new Dish("Chana Masala",
 				"Chick peas delicately cooked with a hint of garlic, ginger, and onion. Seasoned with tamarind, house spices, and cilantro leaves.",
-				tandooriGrill, "$7.00", "/images/tg-chana-masala.jpg", vegetarian, gravy, savory, smallPlate,
-				spicy);
+				tandooriGrill, "$7.00", "/images/tg-chana-masala.jpg", vegetarian, gravy, savory, smallPlate, spicy);
 		chanaMasala = dishRepo.save(chanaMasala);
 		Dish chickenKathiRoll = new Dish("Chicken Kathi Roll",
 				"Boneless chicken pieces marinated in tandoori sauce and grilled in tandoor.", tandooriGrill, "$6.00",
@@ -220,8 +218,7 @@ public class DishPopulator implements CommandLineRunner {
 		bananaPudding = dishRepo.save(bananaPudding);
 		Dish spicyYumaPizza = new Dish("Spicy Yuma Pizza",
 				"gouda/havarti blend, chorizo, jalepenos, corn, roasted red peppers and chipotle spiked tomato sauce.",
-				harvestPizzeria, "$15.75", "images/harvest-spicyyuma.jpg", pizza, spicy, cheese, meat,
-				savory);
+				harvestPizzeria, "$15.75", "images/harvest-spicyyuma.jpg", pizza, spicy, cheese, meat, savory);
 		spicyYumaPizza = dishRepo.save(spicyYumaPizza);
 		Dish pimentoCheese = new Dish("Pimento Cheese", "with sour dough , bread and butter pickles", harvestPizzeria,
 				"$7.00", "images/harvest-pimento.jpg", cheese, savory, smallPlate, creamy, nutty);
@@ -234,13 +231,11 @@ public class DishPopulator implements CommandLineRunner {
 				"images/harvest-meangreen.jpg", salad, vegetarian, healthy, greens, fresh);
 		meanGreenSalad = dishRepo.save(meanGreenSalad);
 		Dish buckeyeBrownie = new Dish("Buckeye Brownie", "Chocolate, Krema Peanut Butter, Vanilla Bean Ice Cream",
-				harvestPizzeria, "$7.00", "images/harvest-buckeye.jpg", dessert, creamy, sweet, chocolate,
-				rich);
+				harvestPizzeria, "$7.00", "images/harvest-buckeye.jpg", dessert, creamy, sweet, chocolate, rich);
 		buckeyeBrownie = dishRepo.save(buckeyeBrownie);
 		Dish germanRoastPorkLoin = new Dish("German Roast Pork Loin",
 				"Tender roast pork loin served with redskin mashed potatoes and your choice of cranberry-apple compote or a rich demi glaze.",
-				mozarts, "$14.95", "images/mozarts-pork-loin-na.jpg", platter, pork, meat, savory,
-				potatoes);
+				mozarts, "$14.95", "images/mozarts-pork-loin-na.jpg", platter, pork, meat, savory, potatoes);
 		germanRoastPorkLoin = dishRepo.save(germanRoastPorkLoin);
 		Dish hamGorgonzolaSpatzle = new Dish("Ham & Gorgonzola Spatzle",
 				"House made spatzle and smokey Black Forest ham simmered in a creamy gorgonzola sauce.", mozarts,
@@ -248,23 +243,19 @@ public class DishPopulator implements CommandLineRunner {
 		hamGorgonzolaSpatzle = dishRepo.save(hamGorgonzolaSpatzle);
 		Dish beefStroganoff = new Dish("Beef Stroganoff",
 				"Braised beef and portabella in a Marsala wine demi glace, topped with a dollop of sour cream and served with buttered spatzle.",
-				mozarts, "$15.95", "images/mozarts-beef-stroganoff.jpg", platter, meat, beef, gravy,
-				creamy);
+				mozarts, "$15.95", "images/mozarts-beef-stroganoff.jpg", platter, meat, beef, gravy, creamy);
 		beefStroganoff = dishRepo.save(beefStroganoff);
 		Dish wienerSchnitzel = new Dish("Wiener Schnitzel",
 				"A lightly breaded, golden brown cutlet prepared in the traditional Viennese style. Served with house made buttered spatzle or redskin mashed potatoes along with your choice of ratatouille, fresh market vegetables, or a side salad.",
-				mozarts, "$15.95", "images/mozarts-wiener-schnitzel.jpg", platter, meat, gravy, rich,
-				creamy);
+				mozarts, "$15.95", "images/mozarts-wiener-schnitzel.jpg", platter, meat, gravy, rich, creamy);
 		wienerSchnitzel = dishRepo.save(wienerSchnitzel);
 		Dish chocolateGanacheTorte = new Dish("Chocolate Ganache Torte",
 				"Three layers of moist chocolate cake filled with chocolate buttercream and enrobed in a rich chocolate ganache.",
-				mozarts, "$12.00", "images/mozarts-torte.jpg", dessert, chocolate, creamy, sweet,
-				rich);
+				mozarts, "$12.00", "images/mozarts-torte.jpg", dessert, chocolate, creamy, sweet, rich);
 		chocolateGanacheTorte = dishRepo.save(chocolateGanacheTorte);
 		Dish quinoaTabouliSalad = new Dish("Quinoa Tabouli Salad",
 				"Quinioa, kale, cherry tomatoes, parslet and red onion in a lemon vinagrette with a tahini dressing drizzle",
-				acre, "$7.95", "images/acre-quinoa-salad.jpg", salad, vegetarian, healthy, greens,
-				fresh);
+				acre, "$7.95", "images/acre-quinoa-salad.jpg", salad, vegetarian, healthy, greens, fresh);
 		quinoaTabouliSalad = dishRepo.save(quinoaTabouliSalad);
 		Dish moleBowl = new Dish("Mole Bowl",
 				"Roasted mushrooms, peppers and onions in a savory Mexican pepper sauce topped with a drizzle of avocado sour cream and pepitas over brown rice or substiture quinoa(add 1.50)",
@@ -272,13 +263,11 @@ public class DishPopulator implements CommandLineRunner {
 		moleBowl = dishRepo.save(moleBowl);
 		Dish bbqRanchWrap = new Dish("BBQ Ranch Wrap",
 				"Roasted sweet potatoes, peppers and onions topped with bbq sauve, shredded cabbage and a drizzle of ranch over brown rice or quinoa (add 1.50)",
-				acre, "$9.45", "images/acre-bbq-ranch-wrap.jpg", wrap, potatoes, bbq, spicy,
-				healthy);
+				acre, "$9.45", "images/acre-bbq-ranch-wrap.jpg", wrap, potatoes, bbq, spicy, healthy);
 		bbqRanchWrap = dishRepo.save(bbqRanchWrap);
 		Dish srirachaChickenSaladSandwich = new Dish("Sriracha Chicken Salad Sandwich",
 				"Spicy chicken salad with house pickes and shredded carrots on local ciabatta bread", acre, "$9.25",
-				"images/acre-sriracha-chicken-salad-sandwich.jpg", sandwich, chicken, spicy, smallPlate,
-				fresh);
+				"images/acre-sriracha-chicken-salad-sandwich.jpg", sandwich, chicken, spicy, smallPlate, fresh);
 		srirachaChickenSaladSandwich = dishRepo.save(srirachaChickenSaladSandwich);
 		Dish bbqPorkSandwich = new Dish("BBQ Pork Sandwich",
 				"Cider braised pork and house made bbq sauve topped with mango slaw on ciabatta bread", acre, "$9.45",
@@ -290,8 +279,7 @@ public class DishPopulator implements CommandLineRunner {
 		grilledSirloinSteakBurroGrande = dishRepo.save(grilledSirloinSteakBurroGrande);
 		Dish enchiladasVegetales = new Dish("Enchiladas Vegetales",
 				"Three cheese enchiladas topped with grilled onions, bell peppers, zucchinis, covered with ranchero sauce. Served with black beans or refried beans, lettuce, tomato and cheese.",
-				elVaquero, "$11.75", "images/ev-enchiladas-vegetarian.jpg", vegetarian, platter, bbq, spicy,
-				cheese);
+				elVaquero, "$11.75", "images/ev-enchiladas-vegetarian.jpg", vegetarian, platter, bbq, spicy, cheese);
 		enchiladasVegetales = dishRepo.save(enchiladasVegetales);
 		Dish polloMargarita = new Dish("Pollo Margarita",
 				"Grilled marinated chicken breast, cooked with black bean corn salsa, in tortilla strips, served with melted Monterrey jack cheddar cheese. Evaporated with El Vaquero original margarita, served with rice, beans and tortillas.",
@@ -299,12 +287,10 @@ public class DishPopulator implements CommandLineRunner {
 		polloMargarita = dishRepo.save(polloMargarita);
 		Dish elManjarVaquero = new Dish("El Manjar Vaquero",
 				"One Chicken enchilada, grilled marinated chicken breast, sirloin steak. Served with Mexican rice, black beans and tortillas.",
-				elVaquero, "$15.75", "/images/ev-el-manjar-vaquero.jpg", platter, chicken, rice, spicy,
-				meat);
+				elVaquero, "$15.75", "/images/ev-el-manjar-vaquero.jpg", platter, chicken, rice, spicy, meat);
 		elManjarVaquero = dishRepo.save(elManjarVaquero);
 		Dish tacosDePescado = new Dish("Tacos de Pescado", "Fish tacos, broccoli cole slaw, chipotle sauce and lime",
-				elVaquero, "$9.99", "/images/ev-tacos-de-pescado.jpg", wrap, savory, fresh, spicy,
-				fish);
+				elVaquero, "$9.99", "/images/ev-tacos-de-pescado.jpg", wrap, savory, fresh, spicy, fish);
 		tacosDePescado = dishRepo.save(tacosDePescado);
 		Dish xangosCheesecake = new Dish("Xangos Cheesecake",
 				"Creamy cheesecake wrapped in a pastry tortilla fried golden dusted with cinnamon and sugar", elVaquero,

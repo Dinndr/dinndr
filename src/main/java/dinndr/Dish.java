@@ -11,7 +11,6 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class Dish {
 
@@ -25,22 +24,22 @@ public class Dish {
 	private String description;
 	private String price;
 	private String image;
-	
+
 	@ManyToMany
 	private Set<Tag> tags;
 
 	public long getTagId() {
 		return id;
 	}
-	
+
 	public Set<Tag> getTags() {
 		return tags;
 	}
-	
+
 	@ManyToOne
 	private Restaurant restaurant;
 
-	public Dish(String name, String description, Restaurant restaurant, String price, String image, Tag...tags) {
+	public Dish(String name, String description, Restaurant restaurant, String price, String image, Tag... tags) {
 		this.name = name;
 		this.description = description;
 		this.restaurant = restaurant;
@@ -76,10 +75,12 @@ public class Dish {
 	public String getImage() {
 		return image;
 	}
+
 	public void add(Tag tag) {
 		tags.add(tag);
 
 	}
+
 	public void remove(Tag tag) {
 		tags.remove(tag);
 	}
