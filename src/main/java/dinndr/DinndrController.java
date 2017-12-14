@@ -16,6 +16,9 @@ public class DinndrController {
 	@Resource
 	private DishRepo dishRepo;
 
+	@Resource 
+	private TagRepo tagRepo;
+	
 	@RequestMapping("/viewdish")
 	public String showDish(Model model) {
 		List<Dish> all = dishRepo.findAll();

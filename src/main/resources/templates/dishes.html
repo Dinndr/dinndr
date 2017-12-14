@@ -13,6 +13,23 @@
 		<div class="dish-photo">
 			<img th:src="${dish.image}" />
 		</div>
+
+		<button onclick="viewMore()">I'm Interested!</button>
+		<button onclick="nextPlease()">Meh.</button>
+
+		<div class="info">
+			<ul>
+				<li th:text="${dish.description}"></li>
+				<li th:text="${dish.price}"></li>
+				<li th:text="${dish.restaurant.getName()}"></li>
+			</ul>
+			<!-- To Be Deleted--test that tags work -->
+			<div th:each="tag: ${dish.tags}">
+			<p th:text="${tag.taste}"></p>
+			</div>
+		</div>
+
+		<div class="next">What's next?</div>
 	</div>
 
 </body>
