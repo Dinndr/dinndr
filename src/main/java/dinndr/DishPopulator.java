@@ -150,12 +150,6 @@ public class DishPopulator implements CommandLineRunner {
 		Tag pasta = new Tag("pasta");
 		pasta= tagRepo.save(pasta);
 
-		Tag dinner = new Tag("dinner");
-		dinner = tagRepo.save(dinner);
-
-		Tag spinach = new Tag("spinach");
-		spinach = tagRepo.save(spinach);
-
 		Tag nutty = new Tag("nutty");
 		nutty = tagRepo.save(nutty);
 
@@ -198,23 +192,23 @@ public class DishPopulator implements CommandLineRunner {
 		pecanCrustedPorkChops = dishRepo.save(pecanCrustedPorkChops);
 		Dish romanoCrustedChicken = new Dish("Romano Crusted Chicken",
 				"crispy fried chicken, garlic buttered noodles, roasted tomato cream sauce", capCity, "$17.99",
-				"/images/cc-chicken.jpg", dinner, chicken, pasta, tomato, creamy);
+				"/images/cc-chicken.jpg", platter, chicken, pasta, tomato, creamy);
 		romanoCrustedChicken = dishRepo.save(romanoCrustedChicken);
 		Dish seriouslyBigChocolateCake = new Dish("Seriously Big Chocolate Cake", "our famous three-layer cake",
 				capCity, "$7.99", "/images/cc-chocolatecake.jpg", dessert, sweet, chocolate, cake, rich);
 		seriouslyBigChocolateCake = dishRepo.save(seriouslyBigChocolateCake);
 		Dish halfSlabSmokedStLouisCutSpareRibs = new Dish("Half Slab Smoked St Louis Cut Spare Ribs",
 				"Smoked spare ribs covered in your choice of Ray Ray's sauces or rubs: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, Vinegar Base Sauce, Ray Ray's Dry Rub, or Spicy Dry Rub.",
-				rayRays, "$11.00", "/images/ray-half-slab-smoked-st-louis-cut-spare-ribs.jpg", dinner, savory,
+				rayRays, "$11.00", "/images/ray-half-slab-smoked-st-louis-cut-spare-ribs.jpg", platter, savory,
 				american, bbq, pork);
 		halfSlabSmokedStLouisCutSpareRibs = dishRepo.save(halfSlabSmokedStLouisCutSpareRibs);
 		Dish jerkChicken = new Dish("Jerk Chicken",
 				"Boneless smoked chicken thighs cooked in jerk sauce and topped with pickled red cabbage and red onion.",
-				rayRays, "$7.00", "/images/ray-jerk-chicken.jpg", dinner, savory, sandwich, chicken, bbq);
+				rayRays, "$7.00", "/images/ray-jerk-chicken.jpg", meat, savory, sandwich, chicken, bbq);
 		jerkChicken = dishRepo.save(jerkChicken);
 		Dish beefBrisket = new Dish("Beef Brisket",
 				"Served with your choice of sauce on top or on the side. Ray Ray's sauces: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, and Vinegar Base Sauce ",
-				rayRays, "$8.00", "/images/ray-beef-brisket.jpg", dinner, savory, sandwich, beef, bbq);
+				rayRays, "$8.00", "/images/ray-beef-brisket.jpg", meat, savory, sandwich, beef, bbq);
 		beefBrisket = dishRepo.save(beefBrisket);
 		Dish scratchMacNCheese = new Dish("Scratch Mac-N-Cheese",
 				"Noodles cooked to perfection and surounded by delicious cheesey goodness.", rayRays, "$4.00",
