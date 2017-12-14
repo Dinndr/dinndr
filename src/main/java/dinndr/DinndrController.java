@@ -16,22 +16,29 @@ public class DinndrController {
 	@Resource
 	private DishRepo dishRepo;
 
+
 	@Resource 
 	private TagRepo tagRepo;
 	
+
 	@RequestMapping("/viewdish")
 	public String showDish(Model model) {
 		List<Dish> all = dishRepo.findAll();
 		int index = new Random().nextInt(all.size());
 		Dish random = all.get(index);
 		model.addAttribute("modelDish", random);
+
+		List<Dish> allNext = dishRepo.findAll();
+		int indexNext = new Random().nextInt(allNext.size());
+		Dish randomNext = all.get(indexNext);
+		model.addAttribute("modelNextDish", randomNext);
 		return "singledish";
-	}
+		}	
 
 	@RequestMapping("/dishes")
 	public String fetchDishes(Model model) {
 		model.addAttribute("dishes", dishRepo.findAll());
 		return "dishes";
 	}
-
+	
 }
