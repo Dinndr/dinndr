@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Untitled</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/jquery.scrollTo.js"></script>
+<script src="js/jquery.localscroll.js"></script>
+<script src="js/custom-scripts.js"></script>
+<script type="text/javascript">
+
+	var sentence = new Array()
+	
+	sentence[0] = new Image();
+	sentence[0].src = 'images/acre-bbq-pork-sandwich.jpg';
+	
+	sentence[1] = new Image();
+	sentence[1].src = 'images/ev-xangos-cheesecake.jpg';
+	
+	sentence[2] = new Image();
+	sentence[2].src = 'images/cc-chips.jpg';
+
+
+
+	var intSentenceIndex = 0;
+
+	function writeThing() {
+		if (intSentenceIndex == sentence.length)
+			intSentenceIndex = 0;	
+		document.getElementById('mySentence').appendChild(sentence[intSentenceIndex]);
+		intSentenceIndex++;
+	}
+
+</script>
+</head>
+
+<body>
+
+	<button onclick="writeThing();">Click Me</button>
+	<div id="mySentence"></div>
+
+</body>
+</html>
