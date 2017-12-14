@@ -21,8 +21,12 @@
 			<ul>
 				<li th:text="${dish.description}"></li>
 				<li th:text="${dish.price}"></li>
-				<li th:text="${dish.restaurant}"></li>
+				<li th:text="${dish.restaurant.getName()}"></li>
 			</ul>
+			<!-- To Be Deleted--test that tags work -->
+			<div th:each="tag: ${dish.tags}">
+			<p th:text="${tag.taste}"></p>
+			</div>
 		</div>
 
 		<div class="next">What's next?</div>
