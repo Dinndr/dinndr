@@ -1,10 +1,16 @@
 package dinndr;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Dish {
@@ -19,27 +25,28 @@ public class Dish {
 	private String description;
 	private String price;
 	private String image;
-	private String tagOne;
-	private String tagTwo;
-	private String tagThree;
-	private String tagFour;
-	private String tagFive;
+	
+	@ManyToMany
+	private Set<Tag> tags;
 
+	public long getTagId() {
+		return id;
+	}
+	
+	public Set<Tag> getTags() {
+		return tags;
+	}
+	
 	@ManyToOne
 	private Restaurant restaurant;
 
-	public Dish(String name, String description, Restaurant restaurant, String price, String image, String tagOne,
-			String tagTwo, String tagThree, String tagFour, String tagFive) {
+	public Dish(String name, String description, Restaurant restaurant, String price, String image, Tag...tags) {
 		this.name = name;
 		this.description = description;
 		this.restaurant = restaurant;
 		this.price = price;
 		this.image = image;
-		this.tagOne = tagOne;
-		this.tagTwo = tagTwo;
-		this.tagThree = tagThree;
-		this.tagFour = tagFour;
-		this.tagFive = tagFive;
+		this.tags = new HashSet<>(Arrays.asList(tags));
 	}
 
 	public Dish() {
@@ -69,25 +76,12 @@ public class Dish {
 	public String getImage() {
 		return image;
 	}
+	public void add(Tag tag) {
+		tags.add(tag);
 
-	public String getTagOne() {
-		return tagOne;
 	}
-
-	public String getTagTwo() {
-		return tagTwo;
-	}
-
-	public String getTagThree() {
-		return tagThree;
-	}
-
-	public String getTagFour() {
-		return tagFour;
-	}
-
-	public String getTagFive() {
-		return tagFive;
+	public void remove(Tag tag) {
+		tags.remove(tag);
 	}
 
 }

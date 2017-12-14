@@ -17,18 +17,26 @@
 		<button onclick="viewMore()">I'm Interested!</button>
 		<button onclick="nextPlease()">Meh.</button>
 
-		<div class="info" style='display: none'>
+		<div class="info">
 			<ul>
 				<li th:text="${dish.description}"></li>
 				<li th:text="${dish.price}"></li>
 				<li th:text="${dish.restaurant.getName()}"></li>
 			</ul>
+			<!-- To Be Deleted--test that tags work -->
+			<div th:each="tag: ${dish.tags}">
+			<p th:text="${tag.taste}"></p>
+			</div>
 		</div>
 
+<<<<<<< HEAD
 		<div class="next" style='display: none'>
 			<img th:src="${dish.image}" />
 		</div>
 
+=======
+		<div class="next">What's next?</div>
+>>>>>>> master
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </body>
