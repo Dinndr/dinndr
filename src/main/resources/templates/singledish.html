@@ -3,19 +3,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Dinndr</title>
+<script src="/js/main.js"></script>
 </head>
 <body>
 	<h1>Dinndr</h1>
-	
+
 	<div class="viewimage">
-			<div class="singleimage">
-			
-            <img th:src="${modelDish.image}" />
-            
-   		   </div>
-       </div>
- 
-	
+		<div class="singleimage">
+
+			<img th:src="${modelDish.image}" /><br></br>
+			<button onclick="viewMore()">I'm Interested!</button>
+			<button onclick="nextPlease()">Meh.</button>
+			<div class="info" style='display: none'>
+				<ul>
+					<li th:text="${modelDish.description}"></li>
+					<li th:text="${modelDish.price}"></li>
+					<li th:text="${modelDish.restaurant.getName()}"></li>
+				</ul>
+			</div>
+			<div class="next" style='display: none'>What's next?</div>
+
+		</div>
+	</div>
+
+
 
 </body>
 </html>
