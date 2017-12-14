@@ -17,15 +17,15 @@
 		<button onclick="viewMore()">I'm Interested!</button>
 		<button onclick="nextPlease()">Meh.</button>
 
-		<div class="info" style='display: none'>
+		<div class="info">
 			<ul>
 				<li th:text="${dish.description}"></li>
 				<li th:text="${dish.price}"></li>
-				<li th:text="${dish.restaurant.getName()}"></li>
+				<li th:text="${dish.restaurant}"></li>
 			</ul>
 		</div>
 
-		<div class="next" style='display: none'>What's next?</div>
+		<div class="next">What's next?</div>
 
 	</div>
 
