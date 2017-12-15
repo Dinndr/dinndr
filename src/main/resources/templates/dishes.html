@@ -27,6 +27,8 @@
 			<div th:each="tag: ${dish.tags}">
 				<p th:text="${tag.taste}"></p>
 			</div>
+			<div id="map" style="width: 400px; height: 400px">My map will
+				go here</div>
 		</div>
 
 		<div class="next" style='display: none'>
@@ -37,5 +39,20 @@
 	</div>
 	<script
 		src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		function myMap() {
+			var myRestaurant = {lat:40.016232,lng:-83.011997}
+			 var map = new google.maps.Map(document.getElementById("map"), {
+		          zoom: 15,
+		          center: myRestaurant
+		        });
+		        var marker = new google.maps.Marker({
+		          position: myRestaurant,
+		          map: map
+		        });
+		}
+	</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
 </html>

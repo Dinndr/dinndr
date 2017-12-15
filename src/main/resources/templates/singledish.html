@@ -21,6 +21,9 @@
 					<li th:text="${modelDish.description}"></li>
 					<li th:text="${modelDish.price}"></li>
 					<li th:text="${modelDish.restaurant.getName()}"></li>
+					<li th:text="${modelDish.restaurant.getAddress()}"></li>
+					<li th:text="${modelDish.restaurant.getPhoneNumber()}"></li>
+					<li th:text="${modelDish.restaurant.getHours()}"></li>
 				</ul>
 			</div>
 			<div class="next" style='display: none'>
