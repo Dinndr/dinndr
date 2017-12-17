@@ -22,6 +22,8 @@ public class Restaurant {
 	private String hours;
 	private String phoneNumber;
 	private String delivery;
+	private double latitude;
+	private double longitude;
 
 	@OneToMany(mappedBy = "restaurant")
 	private Set<Dish> restaurants;
@@ -32,13 +34,15 @@ public class Restaurant {
 
 	}
 
-	public Restaurant(String name, String website, String address, String hours, String phoneNumber, String delivery) {
+	public Restaurant(String name, String website, String address, String hours, String phoneNumber, String delivery, double latitude, double longitude) {
 		this.name = name;
 		this.website = website;
 		this.address = address;
 		this.hours = hours;
 		this.phoneNumber = phoneNumber;
 		this.delivery = delivery;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	// Getters
@@ -69,6 +73,12 @@ public class Restaurant {
 
 	public String getDelivery() {
 		return delivery;
+	}
+	public double getLatitude() {
+		return latitude;
+	}
+	public double getLongitude() {
+		return longitude;
 	}
 
 	public Set<Dish> getRestaurants() {

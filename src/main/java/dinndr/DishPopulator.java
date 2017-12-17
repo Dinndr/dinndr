@@ -20,38 +20,38 @@ public class DishPopulator implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Restaurant tandooriGrill = new Restaurant("Tandoori Grill", "http://www.tandoorigrill.biz/our-menu",
-				"808 Bethel Road, Columbus, OH 43214", "Tue. - Sun. 11:30AM - 9:00PM", "(614) 326-3777", "Y");
+				"808 Bethel Road, Columbus, OH 43214", "Tue. - Sun. 11:30AM - 9:00PM", "(614) 326-3777", "Y", 40.063958, -83.040763);
 		tandooriGrill = restaurantRepo.save(tandooriGrill);
 
 		Restaurant capCity = new Restaurant("Cap City", "https://capcityfinediner.com/locations-menus/grandview",
 				"1299 Olentangy River Road, Columbus, OH 43212",
 				"Mon. - Thu. 11:00AM - 10:00PM, Fri. - Sat 11:00AM - 11:00PM, Sun. 11:00AM - 9:00PM", "(614) 291-3663",
-				"N");
+				"N", 39.986336, -83.025711);
 		capCity = restaurantRepo.save(capCity);
 
 		Restaurant rayRays = new Restaurant("Ray Ray's", "https://www.rayrayshogpit.com",
-				"2619 North High Street, Columbus, OH 43202", "Thu. - Sun. 12:00PM - 8:00PM", "(614) 753-1191", "Y");
+				"2619 North High Street, Columbus, OH 43202", "Thu. - Sun. 12:00PM - 8:00PM", "(614) 753-1191", "Y", 40.015664, -83.012025);
 		rayRays = restaurantRepo.save(rayRays);
 
 		Restaurant elVaquero = new Restaurant("El Vaquero", "https://www.vaquerorestaurant.com/",
 				"3230 Olentangy River Rd, Columbus, OH 43202",
 				"Mon. - Thu. 11:00AM - 10:00PM, Fri. - Sat 11:00AM - 10:30PM, Sun. 11:00AM - 9:30PM", "(614) 261-0900",
-				"Y");
+				"Y", 40.026542, -83.026421);
 		elVaquero = restaurantRepo.save(elVaquero);
 
 		Restaurant harvestPizzeria = new Restaurant("Harvest Pizzeria", "http://harvestpizzeria.com",
 				"2885 North High Street, Columbus OH 43202",
-				"Mon. - Thu. 11:00AM - 10:00PM, Fri. - Sat 11:00AM - 11:00PM", "(614) 947-7133", "N");
+				"Mon. - Thu. 11:00AM - 10:00PM, Fri. - Sat 11:00AM - 11:00PM", "(614) 947-7133", "N", 40.021041, -83.013383);
 		harvestPizzeria = restaurantRepo.save(harvestPizzeria);
 
 		Restaurant mozarts = new Restaurant("Mozart's", "https://mozartscafe.wordpress.com",
 				"4784 North High Street, Columbus, OH 43214", "Tue. - Sat. 8:00AM - 9:00PM, Sun. 9:00AM - 5:00PM",
-				"(614) 268-3687", "N");
+				"(614) 268-3687", "N", 40.060088, -83.019215);
 		mozarts = restaurantRepo.save(mozarts);
 
 		Restaurant acre = new Restaurant("Acre", "https://www.acretogo.com/clintonville",
 				"2700 North High Street, Columbus, OH 43202",
-				"Mon. - Fri. 7:30AM - 10:00PM, Sat. - Sun. 9:00AM - 10:00PM", "(614) 447-9400", "Y");
+				"Mon. - Fri. 7:30AM - 10:00PM, Sat. - Sun. 9:00AM - 10:00PM", "(614) 447-9400", "Y", 40.017538, -83.011691);
 		acre = restaurantRepo.save(acre);
 
 		Tag chicken = new Tag("chicken");
