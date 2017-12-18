@@ -29,10 +29,10 @@ public class DinndrController {
 		model.addAttribute("modelDishRepo", all);
 		model.addAttribute("modelTagRepo", randomTag);
 
-		// List<Dish> allNext = dishRepo.findAll();
-		// int indexNext = new Random().nextInt(allNext.size());
-		// Dish randomNext = all.get(indexNext);
-		// model.addAttribute("modelNextDish", randomNext);
+		List<Dish> allNext = dishRepo.findAll();
+		int indexNext = new Random().nextInt(allNext.size());
+		Dish randomNext = all.get(indexNext);
+		model.addAttribute("modelNextDish", randomNext);
 		return "singledish";
 	}
 
