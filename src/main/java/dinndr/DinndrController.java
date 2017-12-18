@@ -1,6 +1,5 @@
 package dinndr;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -40,5 +39,18 @@ public class DinndrController {
 		model.addAttribute("dishes", dishRepo.findAll());
 		return "dishes";
 	}
+	@RequestMapping("/slideshow")
+	public String showSlideshow(Model model) {
+		List<Dish> all = dishRepo.findAll();
+		int index = new Random().nextInt(all.size());
+		Dish random = all.get(index);
+		model.addAttribute("modelDish", random);
+
+		List<Dish> allNext = dishRepo.findAll();
+		int indexNext = new Random().nextInt(allNext.size());
+		Dish randomNext = all.get(indexNext);
+		model.addAttribute("modelNextDish", randomNext);
+		return "slideshow";
+		}	
 	
 }
