@@ -28,8 +28,6 @@ public class Restaurant {
 	@OneToMany(mappedBy = "restaurant")
 	private Set<Dish> restaurants;
 
-	// used for JPA
-
 	public Restaurant() {
 
 	}

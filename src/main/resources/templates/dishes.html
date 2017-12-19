@@ -17,7 +17,8 @@
 		<button onclick="viewMore()">I'm Interested!</button>
 		<button onclick="nextPlease()">Meh.</button>
 
-		<div class="info">
+		<div class="info"
+			th:attr="data-longitude=${dish.restaurant.longitude}, data-latitude=${dish.restaurant.latitude}">
 			<ul>
 				<li th:text="${dish.description}"></li>
 				<li th:text="${dish.price}"></li>
@@ -37,9 +38,28 @@
 
 		<div class="next">What's next?</div>
 	</div>
+	<script>
+		function myMap() {
+			var info = document.querySelector(".info");
+
+			var myLat = parseFloat(info.dataset.latitude);
+			var myLng = parseFloat(info.dataset.longitude);
+
+			var myCenter = new google.maps.LatLng(myLat, myLng);
+			var myRestaurant = {
+				center : myCenter,
+				zoom : 15,
+			};
+			var map = new google.maps.Map(document.getElementById("map"),
+					myRestaurant);
+			var marker = new google.maps.Marker({
+				position : myCenter
+			});
+			marker.setMap(map);
+		}; 
+		</script>
 	<script
 		src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<!-- Script call for Google Maps -->
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
