@@ -1,17 +1,18 @@
 body{
-  font-family:"Arial",sans-serif;
+  font-family:'Signika',sans-serif;
   font-size:14px;
-  color:#fff;
-  background:#333;
+  color:#F26968;
+  background:#323339;
 }
 
 a{
-  color:#fff;
+  color:#F26968;
   text-decoration: none;
 }
 
 h1{
   text-align: center;
+  font-size: 300%;
 }
 
 .container{
