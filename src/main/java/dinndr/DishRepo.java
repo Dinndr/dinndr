@@ -10,4 +10,6 @@ public interface DishRepo extends CrudRepository<Dish, Long> {
 
 	@Override
 	public List<Dish> findAll();
+	
+	
 }
