@@ -1,5 +1,7 @@
 package dinndr;
 
+import java.util.Collection;
+
 import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
@@ -10,17 +12,25 @@ public class DishPopulator implements CommandLineRunner {
 
 	@Resource
 	public DishRepo dishRepo;
+
 	@Resource
 	private TagRepo tagRepo;
 
 	@Resource
 	private RestaurantRepo restaurantRepo;
 
+	@Resource
+	private UserProfileRepo userProfileRepo;
+
 	@Override
 	public void run(String... args) throws Exception {
 
+		UserProfile newUser = new UserProfile();
+		newUser = userProfileRepo.save(newUser);
+
 		Restaurant tandooriGrill = new Restaurant("Tandoori Grill", "http://www.tandoorigrill.biz/our-menu",
-				"808 Bethel Road, Columbus, OH 43214", "Tue. - Sun. 11:30AM - 9:00PM", "(614) 326-3777", "Y", 40.063958, -83.040763);
+				"808 Bethel Road, Columbus, OH 43214", "Tue. - Sun. 11:30AM - 9:00PM", "(614) 326-3777", "Y", 40.063958,
+				-83.040763);
 		tandooriGrill = restaurantRepo.save(tandooriGrill);
 
 		Restaurant capCity = new Restaurant("Cap City", "https://capcityfinediner.com/locations-menus/grandview",
@@ -30,7 +40,8 @@ public class DishPopulator implements CommandLineRunner {
 		capCity = restaurantRepo.save(capCity);
 
 		Restaurant rayRays = new Restaurant("Ray Ray's", "https://www.rayrayshogpit.com",
-				"2619 North High Street, Columbus, OH 43202", "Thu. - Sun. 12:00PM - 8:00PM", "(614) 753-1191", "Y", 40.015664, -83.012025);
+				"2619 North High Street, Columbus, OH 43202", "Thu. - Sun. 12:00PM - 8:00PM", "(614) 753-1191", "Y",
+				40.015664, -83.012025);
 		rayRays = restaurantRepo.save(rayRays);
 
 		Restaurant elVaquero = new Restaurant("El Vaquero", "https://www.vaquerorestaurant.com/",
@@ -41,7 +52,8 @@ public class DishPopulator implements CommandLineRunner {
 
 		Restaurant harvestPizzeria = new Restaurant("Harvest Pizzeria", "http://harvestpizzeria.com",
 				"2885 North High Street, Columbus OH 43202",
-				"Mon. - Thu. 11:00AM - 10:00PM, Fri. - Sat 11:00AM - 11:00PM", "(614) 947-7133", "N", 40.021041, -83.013383);
+				"Mon. - Thu. 11:00AM - 10:00PM, Fri. - Sat 11:00AM - 11:00PM", "(614) 947-7133", "N", 40.021041,
+				-83.013383);
 		harvestPizzeria = restaurantRepo.save(harvestPizzeria);
 
 		Restaurant mozarts = new Restaurant("Mozart's", "https://mozartscafe.wordpress.com",
@@ -51,7 +63,8 @@ public class DishPopulator implements CommandLineRunner {
 
 		Restaurant acre = new Restaurant("Acre", "https://www.acretogo.com/clintonville",
 				"2700 North High Street, Columbus, OH 43202",
-				"Mon. - Fri. 7:30AM - 10:00PM, Sat. - Sun. 9:00AM - 10:00PM", "(614) 447-9400", "Y", 40.017538, -83.011691);
+				"Mon. - Fri. 7:30AM - 10:00PM, Sat. - Sun. 9:00AM - 10:00PM", "(614) 447-9400", "Y", 40.017538,
+				-83.011691);
 		acre = restaurantRepo.save(acre);
 
 		Tag chicken = new Tag("chicken");
