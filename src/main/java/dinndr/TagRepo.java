@@ -3,7 +3,9 @@ package dinndr;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface TagRepo extends CrudRepository<Tag, Long> {
 
 	@Override
