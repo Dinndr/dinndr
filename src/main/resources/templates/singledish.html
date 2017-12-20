@@ -10,26 +10,60 @@
 
 	<div class="viewimage">
 		<div class="singleimage">
-
+			<div>
+				<!-- th:text="${modelDishRemove.size()}"> -->
+			</div>
 			<img th:src="${modelDish.image}" alt="${modelDish.name}"
 				style="width: 400px; height: 380px" /><br></br>
 
 			<button onclick="viewMore()">I'm Interested!</button>
 			<button onclick="nextPlease()">Meh.</button>
-			<div class="info" style='display: none'>
+			<div class="info"
+				th:attr="data-longitude=${dish.restaurant.longitude}, data-latitude=${dish.restaurant.latitude}"
+				style='display: none'>
 				<ul>
 					<li th:text="${modelDish.description}"></li>
 					<li th:text="${modelDish.price}"></li>
 					<li th:text="${modelDish.restaurant.getName()}"></li>
+					<li th:text="${modelDish.restaurant.getAddress()}"></li>
+					<li th:text="${modelDish.restaurant.getPhoneNumber()}"></li>
+					<li th:text="${modelDish.restaurant.getHours()}"></li>
+					<li th:text="${modelTagRepo.getTaste()}"></li>
 				</ul>
+				<div id="map" style="width: 400px; height: 400px">Restaurant
+					map will go here</div>
 			</div>
 			<div class="next" style='display: none'>
 				<img th:src="${modelNextDish.image}" />
 			</div>
 		</div>
+		<div>
+			<!-- th:text="${modelDishRemove.size()}"> -->
+		</div>
 	</div>
 
+	<script>
+		function myMap() {
+			var info = document.querySelector(".info");
+			var myLat = parseFloat(info.dataset.latitude);
+			var myLng = parseFloat(info.dataset.longitude);
+			var myCenter = new google.maps.LatLng(myLat, myLng);
+			var myRestaurant = {
+				center : myCenter,
+				zoom : 15,
+			};
+			var map = new google.maps.Map(document.getElementById("map"),
+					myRestaurant);
+			var marker = new google.maps.Marker({
+				position : myCenter
+			});
+			marker.setMap(map);
 
-
+		}
+	</script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
 </html>
