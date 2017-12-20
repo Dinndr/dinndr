@@ -1,5 +1,6 @@
 package dinndr;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.annotation.Resource;
@@ -24,9 +25,6 @@ public class DishPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		UserProfile newUser = new UserProfile();
-		newUser = userProfileRepo.save(newUser);
 
 		Restaurant tandooriGrill = new Restaurant("Tandoori Grill", "http://www.tandoorigrill.biz/our-menu",
 				"808 Bethel Road, Columbus, OH 43214", "Tue. - Sun. 11:30AM - 9:00PM", "(614) 326-3777", "Y", 40.063958,
@@ -309,6 +307,11 @@ public class DishPopulator implements CommandLineRunner {
 				"Creamy cheesecake wrapped in a pastry tortilla fried golden dusted with cinnamon and sugar", elVaquero,
 				"$4.69", "/images/ev-xangos-cheesecake.jpg", dessert, creamy, sweet, fried, rich);
 		xangosCheesecake = dishRepo.save(xangosCheesecake);
+
+		Collection<Dish> liked = new ArrayList<>();
+		liked.add(xangosCheesecake);
+		UserProfile newUser = new UserProfile(liked, null);
+		newUser = userProfileRepo.save(newUser);
 
 	}
 

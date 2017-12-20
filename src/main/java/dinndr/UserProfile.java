@@ -3,14 +3,19 @@ package dinndr;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class UserProfile {
 
+	@ManyToMany
 	private Collection<Dish> liked;
 
+	@ManyToMany
 	private Collection<Dish> disliked;
 
+	@Id
 	private Long id;
 
 	public UserProfile(Collection<Dish> liked, Collection<Dish> disliked) {
