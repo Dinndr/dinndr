@@ -1,8 +1,11 @@
-(document).ready(function(){
+//(document).ready(function(){
+//
+//	$.ajax({
+//			url:'https://localhost8080/dishes/{id}/dislike'
+//	})
+//
+//)};
 
-	$.ajax({
-			url:'https://localhost8080/dishes/{id}/dislike'
-			)},
 function viewMore() {
 	var x = document.querySelector(".info");
 	if (x.style.display === "none") {
@@ -20,5 +23,3 @@ function nextPlease() {
 		x.style.display = "none";
 	}
 };
-)};
-
