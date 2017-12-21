@@ -1,5 +1,6 @@
 package dinndr;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -44,6 +45,11 @@ public class DinndrController {
 		return "dishes";
 	}
 	
+
+	@RequestMapping(value = "/dishes/{Id}/dislikes", method = RequestMethod.PUT)
+	public List<Dish> getDislikes(@PathVariable(dislikes) List<Dish> dislikes) {
+
+	}
 
 	@RequestMapping("/slideshow")
 	public String showSlideshow(Model model) {

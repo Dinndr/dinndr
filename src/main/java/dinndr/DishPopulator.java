@@ -310,6 +310,8 @@ public class DishPopulator implements CommandLineRunner {
 
 		Collection<Dish> liked = new ArrayList<>();
 		liked.add(xangosCheesecake);
+		liked.add(polloMargarita);
+
 
 		Collection<Dish> disliked = new ArrayList<>();
 		disliked.add(tacosDePescado);
