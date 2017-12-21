@@ -20,7 +20,7 @@ public class DinndrController {
 	@Resource
 	private TagRepo tagRepo;
 
-	@RequestMapping("/viewdish")
+	@RequestMapping("/singledish")
 	public String showDish(Model model) {
 		List<Dish> all = dishRepo.findAll();
 		int index = new Random().nextInt(all.size());

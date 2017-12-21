@@ -5,7 +5,6 @@
 //	})
 //
 //)};
-
 function viewMore() {
 	var x = document.querySelector(".info");
 	if (x.style.display === "none") {
@@ -23,3 +22,25 @@ function nextPlease() {
 		x.style.display = "none";
 	}
 };
+
+function myMap() {
+	var info = document.querySelector(".info");
+
+	var myLat = parseFloat(info.dataset.latitude);
+	var myLng = parseFloat(info.dataset.longitude);
+
+	var myCenter = new google.maps.LatLng(myLat, myLng);
+	var myRestaurant = {
+		center : myCenter,
+		zoom : 15,
+	};
+	var map = new google.maps.Map(document.getElementById("map"),
+			myRestaurant);
+	var marker = new google.maps.Marker({
+		position : myCenter
+	});
+	marker.setMap(map);
+}; 
+jQuery.nextDish = function() {
+	   jQuery.getJSON("https://localhost/8080/dishes/next");
+	};
