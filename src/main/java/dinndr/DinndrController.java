@@ -44,6 +44,7 @@ public class DinndrController {
 		model.addAttribute("dishes", dishRepo.findAll());
 		return "dishes";
 	}
+	
 
 	@RequestMapping(value = "/dishes/{Id}/dislikes", method = RequestMethod.PUT)
 	public List<Dish> getDislikes(@PathVariable(dislikes) List<Dish> dislikes) {
