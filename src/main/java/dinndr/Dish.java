@@ -11,6 +11,9 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 @Entity
 public class Dish {
 
@@ -36,7 +39,9 @@ public class Dish {
 		return tags;
 	}
 
+	
 	@ManyToOne
+	@JsonIgnore
 	private Restaurant restaurant;
 
 	public Dish(String name, String description, Restaurant restaurant, String price, String image, Tag... tags) {
