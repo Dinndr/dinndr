@@ -24,6 +24,5 @@ public class NextDishController {
 		int index = new Random().nextInt(all.size());
 		Dish random = all.get(index);
 		return dishRepo.findOne((long) index);
-				}
-
+		}
 }

@@ -1,21 +1,5 @@
-//(document).ready(function(){
-//
-//	$.ajax({
-//			url:'https://localhost8080/dishes/{id}/dislike'
-//	})
-//
-//)};
 function viewMore() {
 	var x = document.querySelector(".info");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-};
-
-function nextPlease() {
-	var x = document.querySelector(".next");
 	if (x.style.display === "none") {
 		x.style.display = "block";
 	} else {
@@ -41,6 +25,26 @@ function myMap() {
 	});
 	marker.setMap(map);
 }; 
-jQuery.nextDish = function() {
-	   jQuery.getJSON("https://localhost/8080/dishes/next");
-	};
+
+function nextPlease() {
+	var x = document.querySelector(".next");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+	var disliked = document.querySelector(".disliked");
+	var myId = parseFloat(disliked.dataset.dishid);
+	$.ajax({
+		url: 'http://localhost:8080/dishes/' + myId + '/disliked',
+		method: 'PUT'
+	}).done(showNext);
+	
+	var showNext = function(myId){
+		$.ajax({
+			url: 'http://localhost:8080/dishes/next'
+		}).done();
+	}
+};
+// .done and call function to get next dish from Next Dish controller
+// access object elements

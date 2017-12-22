@@ -26,6 +26,7 @@ public class DinndrController {
 		List<Dish> all = dishRepo.findAll();
 		int index = new Random().nextInt(all.size());
 		Dish random = all.get(index);
+		
 		List<Tag> allTags = tagRepo.findAll();
 		Tag randomTag = allTags.get(index);
 		model.addAttribute("modelDish", random);
