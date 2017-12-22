@@ -25,6 +25,7 @@ function myMap() {
 	});
 	marker.setMap(map);
 }; 
+
 function nextPlease() {
 	var x = document.querySelector(".next");
 	if (x.style.display === "none") {
@@ -35,13 +36,15 @@ function nextPlease() {
 	var disliked = document.querySelector(".disliked");
 	var myId = parseFloat(disliked.dataset.dishid);
 	$.ajax({
-		url: 'https://localhost:8080/dishes/' + myId + '/disliked',
-		type: 'PUT'
-	});
-    // method should be http PUT
-     
-//    }).done(function(){
-//    }
+		url: 'http://localhost:8080/dishes/' + myId + '/disliked',
+		method: 'PUT'
+	}).done(showNext);
+	
+	var showNext = function(myId){
+		$.ajax({
+			url: 'http://localhost:8080/dishes/next'
+		}).done();
+	}
 };
-// .done and call function
+// .done and call function to get next dish from Next Dish controller
 // access object elements
