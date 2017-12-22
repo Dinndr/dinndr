@@ -17,7 +17,7 @@
 				style="width: 400px; height: 380px" /><br></br>
 
 			<button onclick="viewMore()">I'm Interested!</button>
-			<button onclick="nextPlease()">Meh.</button>
+			<button class="disliked" th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
 			<div class="info" style='display: none' th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 				<ul>
 					<li th:text="${modelDish.description}"></li>
