@@ -39,7 +39,8 @@ function nextPlease() {
 	
 	var showNext = function(myId){
 		$.ajax({
-			url: 'http://localhost:8080/dishes/next'
+			url: 'http://localhost:8080/dishes/next',
+			method: 'GET'
 		}).done();
 	}
 };
