@@ -12,20 +12,17 @@ function myMap() {
 
 	var myLat = parseFloat(info.dataset.latitude);
 	var myLng = parseFloat(info.dataset.longitude);
-
-	var myCenter = new google.maps.LatLng(myLat, myLng);
-	var myRestaurant = {
-		center : myCenter,
-		zoom : 15,
-	};
-	var map = new google.maps.Map(document.getElementById("map"),
-			myRestaurant);
-	var marker = new google.maps.Marker({
-		position : myCenter
-	});
-	marker.setMap(map);
+	var myRestaurant = {lat: myLat, lng: myLng};
+	
+	var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: myRestaurant
+        });
+        var marker = new google.maps.Marker({
+          position: myRestaurant,
+          map: map
+        });
 }; 
-
 function nextPlease() {
 	var x = document.querySelector(".next");
 	if (x.style.display === "none") {
