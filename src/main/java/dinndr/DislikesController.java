@@ -27,8 +27,7 @@ public class DislikesController {
 		Dish dislikedDish = dishRepo.findOne(id);
 		theOne.getDisliked().add(dislikedDish);
 		theOne = userProfileRepo.save(theOne);
-		log.info(theOne.getDisliked());
-		log.info("fuu");
+		log.info("We disliked -> " + theOne.getDisliked());
 	}
 
 }
