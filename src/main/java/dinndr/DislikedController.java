@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DislikesController {
+public class DislikedController {
 
 	@Resource
 	private UserProfileRepo userProfileRepo;
@@ -27,8 +27,7 @@ public class DislikesController {
 		Dish dislikedDish = dishRepo.findOne(id);
 		theOne.getDisliked().add(dislikedDish);
 		theOne = userProfileRepo.save(theOne);
-		log.info(theOne.getDisliked());
-		log.info("fuu");
+		log.info("We disliked -> " + theOne.getDisliked());
 	}
 
 }

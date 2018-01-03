@@ -5,6 +5,14 @@ function viewMore() {
 	} else {
 		x.style.display = "none";
 	}
+
+	var liked = document.querySelector(".liked");
+	var myId = parseFloat(liked.dataset.dishid);
+	$.ajax({
+		url : 'http://localhost:8080/dishes/' + myId + '/liked',
+		method : 'PUT'
+	}).done();
+
 };
 
 function myMap() {
@@ -12,8 +20,11 @@ function myMap() {
 
 	var myLat = parseFloat(info.dataset.latitude);
 	var myLng = parseFloat(info.dataset.longitude);
-	var myRestaurant = {lat: myLat, lng: myLng};
-	
+	var myRestaurant = {
+		lat : myLat,
+		lng : myLng
+	};
+
 	var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 15,
           center: myRestaurant
@@ -46,6 +57,7 @@ function nextPlease() {
 		url: 'http://localhost:8080/dishes/' + myId + '/disliked',
 		method: 'PUT'
 	}).done(showNext);	
+
 };
 // .done and call function to get next dish from Next Dish controller
 // access object elements
