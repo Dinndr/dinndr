@@ -4,6 +4,8 @@
 <head>
 <title>Dinndr</title>
 <script src="/js/main.js"></script>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 	<h1>Dinndr</h1>
@@ -13,8 +15,8 @@
 			<div>
 				<!-- th:text="${modelDishRemove.size()}"> -->
 			</div>
-			<img th:src="${modelDish.image}" alt="${modelDish.name}"
-				style="width: 400px; height: 380px" /><br></br>
+			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}"
+				style="width: 400px; height: 380px" /><div id="dishImage" style="width: 400px; height: 380px"/><br></br>
 
 			<button class="liked" th:attr="data-dishid=${modelDish.id}"
 				onclick="viewMore()">I'm Interested!</button>
@@ -23,12 +25,18 @@
 			<div class="info" style='display: none'
 				th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 				<ul>
-					<li th:text="${modelDish.description}"></li>
+					<li id="description"></li>
+					<li id="price"></li>
+					<li id="name"></li>
+					<li id="adress"></li>
+					<li id="phoneNumber"></li>
+					<li id="hours"></li>
+<!--				<li th:text="${modelDish.description}"></li>
 					<li th:text="${modelDish.price}"></li>
 					<li th:text="${modelDish.restaurant.getName()}"></li>
 					<li th:text="${modelDish.restaurant.getAddress()}"></li>
 					<li th:text="${modelDish.restaurant.getPhoneNumber()}"></li>
-					<li th:text="${modelDish.restaurant.getHours()}"></li>
+					<li th:text="${modelDish.restaurant.getHours()}"></li> -->
 				</ul>
 				<div id="map" style="width: 400px; height: 400px">Restaurant
 					map will go here</div>
