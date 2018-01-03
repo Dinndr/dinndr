@@ -26,14 +26,24 @@ function myMap() {
 	};
 
 	var map = new google.maps.Map(document.getElementById("map"), {
-		zoom : 15,
-		center : myRestaurant
+          zoom: 15,
+          center: myRestaurant
+        });
+        var marker = new google.maps.Marker({
+          position: myRestaurant,
+          map: map
+        });
+}; 
+
+var showNext = function(){
+	$.ajax({
+		url: 'http://localhost:8080/dishes/next',
+		method: 'GET'
+	}).done(function(dish) {
+		$('#nextImage').html('<img src="' + dish.image + '">');
 	});
-	var marker = new google.maps.Marker({
-		position : myRestaurant,
-		map : map
-	});
-};
+}
+
 function nextPlease() {
 	var x = document.querySelector(".next");
 	if (x.style.display === "none") {
@@ -44,16 +54,10 @@ function nextPlease() {
 	var disliked = document.querySelector(".disliked");
 	var myId = parseFloat(disliked.dataset.dishid);
 	$.ajax({
-		url : 'http://localhost:8080/dishes/' + myId + '/disliked',
-		method : 'PUT'
-	}).done(showNext);
+		url: 'http://localhost:8080/dishes/' + myId + '/disliked',
+		method: 'PUT'
+	}).done(showNext);	
 
-	var showNext = function(myId) {
-		$.ajax({
-			url : 'http://localhost:8080/dishes/next',
-			method : 'GET'
-		}).done();
-	}
 };
 // .done and call function to get next dish from Next Dish controller
 // access object elements
