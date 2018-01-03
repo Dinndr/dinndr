@@ -40,7 +40,14 @@ var showNext = function(){
 		url: 'http://localhost:8080/dishes/next',
 		method: 'GET'
 	}).done(function(dish) {
-		$('#nextImage').html('<img src="' + dish.image + '">');
+		$('#dishImage').html('<img src="' + dish.image + '">');
+		$('#description').html(dish.description)
+		$('#price').html(dish.price)
+	}).done(function(restaurant) {
+		$('#name').html(restaurant.name)
+		$('#adress').html(restaurant.adress)
+		$('#phoneNumber').html(restaurant.phoneNumber)
+		$('#hours').html(restaurant.hours)
 	});
 }
 
