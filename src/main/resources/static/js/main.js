@@ -23,6 +23,16 @@ function myMap() {
           map: map
         });
 }; 
+
+var showNext = function(){
+	$.ajax({
+		url: 'http://localhost:8080/dishes/next',
+		method: 'GET'
+	}).done(function(dish) {
+		$('#nextImage').html('<img src="' + dish.image + '">');
+	});
+}
+
 function nextPlease() {
 	var x = document.querySelector(".next");
 	if (x.style.display === "none") {
@@ -35,14 +45,7 @@ function nextPlease() {
 	$.ajax({
 		url: 'http://localhost:8080/dishes/' + myId + '/disliked',
 		method: 'PUT'
-	}).done(showNext);
-	
-	var showNext = function(myId){
-		$.ajax({
-			url: 'http://localhost:8080/dishes/next',
-			method: 'GET'
-		}).done();
-	}
+	}).done(showNext);	
 };
 // .done and call function to get next dish from Next Dish controller
 // access object elements
