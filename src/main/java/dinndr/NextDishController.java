@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class NextDishController {
-	
+
 	@Resource
 	private DishRepo dishRepo;
-	
+
 	@Resource
 	private RestaurantRepo restaurantRepo;
 
@@ -24,5 +24,5 @@ public class NextDishController {
 		int index = new Random().nextInt(all.size());
 		Dish random = all.get(index);
 		return dishRepo.findOne((long) index);
-		}
+	}
 }

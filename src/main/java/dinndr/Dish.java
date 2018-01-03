@@ -90,4 +90,11 @@ public class Dish {
 		tags.remove(tag);
 	}
 
+	@Override
+	public String toString() {
+		return name;
+	}
+	
+	
+
 }

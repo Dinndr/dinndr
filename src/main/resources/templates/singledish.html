@@ -16,9 +16,12 @@
 			<img th:src="${modelDish.image}" alt="${modelDish.name}"
 				style="width: 400px; height: 380px" /><br></br>
 
-			<button onclick="viewMore()">I'm Interested!</button>
-			<button class="disliked" th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
-			<div class="info" style='display: none' th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+			<button class="liked" th:attr="data-dishid=${modelDish.id}"
+				onclick="viewMore()">I'm Interested!</button>
+			<button class="disliked" th:attr="data-dishid=${modelDish.id}"
+				onclick="nextPlease()">Meh.</button>
+			<div class="info" style='display: none'
+				th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 				<ul>
 					<li th:text="${modelDish.description}"></li>
 					<li th:text="${modelDish.price}"></li>
@@ -38,9 +41,8 @@
 			<!-- th:text="${modelDishRemove.size()}"> -->
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script
-		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
 </html>
