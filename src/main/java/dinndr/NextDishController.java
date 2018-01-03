@@ -1,10 +1,13 @@
 package dinndr;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,16 +16,37 @@ import org.springframework.web.bind.annotation.RestController;
 public class NextDishController {
 
 	@Resource
+	private UserProfileRepo userProfileRepo;
+
+	@Resource
 	private DishRepo dishRepo;
 
 	@Resource
 	private RestaurantRepo restaurantRepo;
 
+	private Log log = LogFactory.getLog(getClass());
+
 	@RequestMapping(value = "/dishes/next", method = RequestMethod.GET)
 	public Dish findNextDish() {
-		List<Dish> all = dishRepo.findAll();
+		UserProfile theOne = userProfileRepo.findOne(1L);
+		List<Dish> all = findEligibleDishes(theOne);
 		int index = new Random().nextInt(all.size());
-		Dish random = all.get(index);
+		// Dish random = all.get(index);
+		log.info("New total of " + all.size());
 		return dishRepo.findOne((long) index);
+
+	}
+
+	private List<Dish> findEligibleDishes(UserProfile profile) {
+		List<Dish> all = dishRepo.findAll();
+
+		// start with all
+		List<Dish> eligible = new ArrayList<>(all);
+		// remove liked
+		eligible.removeAll(profile.getLiked());
+		// remove disliked
+		eligible.removeAll(profile.getDisliked());
+
+		return eligible;
 	}
 }
