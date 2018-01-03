@@ -203,8 +203,9 @@ public class DishPopulator implements CommandLineRunner {
 				"Crispy fried chicken, garlic buttered noodles, roasted tomato cream sauce", capCity, "$17.99",
 				"/images/cc-chicken.jpg", platter, chicken, pasta, tomato, creamy);
 		romanoCrustedChicken = dishRepo.save(romanoCrustedChicken);
-		Dish seriouslyBigChocolateCake = new Dish("Seriously Big Chocolate Cake", "Our famous three-layer chocolate cake",
-				capCity, "$7.99", "/images/cc-chocolatecake.jpg", dessert, sweet, chocolate, cake, rich);
+		Dish seriouslyBigChocolateCake = new Dish("Seriously Big Chocolate Cake",
+				"Our famous three-layer chocolate cake", capCity, "$7.99", "/images/cc-chocolatecake.jpg", dessert,
+				sweet, chocolate, cake, rich);
 		seriouslyBigChocolateCake = dishRepo.save(seriouslyBigChocolateCake);
 		Dish halfSlabSmokedStLouisCutSpareRibs = new Dish("Half Slab Smoked St Louis Cut Spare Ribs",
 				"Smoked spare ribs covered in your choice of Ray Ray's sauces or rubs: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, Vinegar Base Sauce, Ray Ray's Dry Rub, or Spicy Dry Rub.",
@@ -231,8 +232,8 @@ public class DishPopulator implements CommandLineRunner {
 				"Gouda/havarti blend, chorizo, jalepenos, corn, roasted red peppers and chipotle-spiked tomato sauce.",
 				harvestPizzeria, "$15.75", "images/harvest-spicyyuma.jpg", pizza, spicy, cheese, meat, savory);
 		spicyYumaPizza = dishRepo.save(spicyYumaPizza);
-		Dish pimentoCheese = new Dish("Pimento Cheese", "Pimento Cheese with sour dough , bread and butter pickles", harvestPizzeria,
-				"$7.00", "images/harvest-pimento.jpg", cheese, savory, smallPlate, creamy, nutty);
+		Dish pimentoCheese = new Dish("Pimento Cheese", "Pimento Cheese with sour dough , bread and butter pickles",
+				harvestPizzeria, "$7.00", "images/harvest-pimento.jpg", cheese, savory, smallPlate, creamy, nutty);
 		pimentoCheese = dishRepo.save(pimentoCheese);
 		Dish margheritaPizza = new Dish("Margherita Pizza", "Fresh Mozarella, Basil Pizza", harvestPizzeria, "$12.75",
 				"images/harvest-margherita.jpg", pizza, vegetarian, cheese, spicy, fresh);
@@ -309,13 +310,9 @@ public class DishPopulator implements CommandLineRunner {
 		xangosCheesecake = dishRepo.save(xangosCheesecake);
 
 		Collection<Dish> liked = new ArrayList<>();
-	
-		Collection<Dish> disliked = new ArrayList<>();
-		disliked.add(tacosDePescado);
 
-		
-		
-		
+		Collection<Dish> disliked = new ArrayList<>();
+
 		UserProfile newUser = new UserProfile(liked, disliked);
 		newUser = userProfileRepo.save(newUser);
 

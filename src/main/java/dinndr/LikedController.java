@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LikedController {
-	
+
 	@Resource
 	private UserProfileRepo userProfileRepo;
 
@@ -27,9 +27,7 @@ public class LikedController {
 		Dish likedDish = dishRepo.findOne(id);
 		theOne.getLiked().add(likedDish);
 		theOne = userProfileRepo.save(theOne);
-		log.info(theOne.getLiked());
-		log.info("bar");
+		log.info("We liked -> " + theOne.getLiked());
 	}
-
 
 }
