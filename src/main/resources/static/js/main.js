@@ -1,12 +1,13 @@
 /*add DOM element for viewMore
 add DOM element for nextPlease*/
 
-
+var myRestaurant;
 function viewMore() {
 	var x = document.querySelector(".info");
 	if (x.style.display === "none") {
 		x.style.display = "block";
 		google.maps.event.trigger(map, 'resize');
+		map.setCenter(new google.maps.LatLng(myRestaurant));
 	} else {
 		x.style.display = "none";
 	}
@@ -25,7 +26,7 @@ function myMap() {
 
 	var myLat = parseFloat(info.dataset.latitude);
 	var myLng = parseFloat(info.dataset.longitude);
-	var myRestaurant = {
+	 myRestaurant = {
 		lat : myLat,
 		lng : myLng
 	};
@@ -44,8 +45,10 @@ function myMap() {
 		position : myRestaurant,
 		map : map
 	});
-	
+
 };
+
+
 function showNext() {
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
