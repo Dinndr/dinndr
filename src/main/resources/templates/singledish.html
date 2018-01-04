@@ -12,18 +12,14 @@
 
 	<div class="viewimage">
 		<div class="singleimage">
-			<div>
-				<!-- th:text="${modelDishRemove.size()}"> -->
-			</div>
-			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}"
-				style="width: 400px; height: 380px" /><div id="dishImage" style="width: 400px; height: 380px"/><br></br>
+			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}" style="width: 400px; height: 380px" />
+			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
+			<br></br>
 
-			<button class="liked" th:attr="data-dishid=${modelDish.id}"
-				onclick="viewMore()">I'm Interested!</button>
-			<button class="disliked" th:attr="data-dishid=${modelDish.id}"
-				onclick="nextPlease()">Meh.</button>
-			<div class="info" style='display: none'
-				th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+			<button class="liked" th:attr="data-dishid=${modelDish.id}" onclick="viewMore()">I'm Interested!</button>
+			<button class="disliked" th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
+			
+			<div class="info" style='display: none' th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 				<ul>
 					<li id="description"></li>
 					<li id="price"></li>
@@ -31,22 +27,14 @@
 					<li id="adress"></li>
 					<li id="phoneNumber"></li>
 					<li id="hours"></li>
-<!--				<li th:text="${modelDish.description}"></li>
-					<li th:text="${modelDish.price}"></li>
-					<li th:text="${modelDish.restaurant.getName()}"></li>
-					<li th:text="${modelDish.restaurant.getAddress()}"></li>
-					<li th:text="${modelDish.restaurant.getPhoneNumber()}"></li>
-					<li th:text="${modelDish.restaurant.getHours()}"></li> -->
+					<li id="website"></li>
+					<li id="delivery"></li>
 				</ul>
-				<div id="map" style="width: 400px; height: 400px">Restaurant
-					map will go here</div>
+				<div id="map" style="width: 400px; height: 400px">Restaurant map will go here</div>
 			</div>
 			<div class="next" style='display: none'>
 				<div id="nextImage"></div>
 			</div>
-		</div>
-		<div>
-			<!-- th:text="${modelDishRemove.size()}"> -->
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -46,7 +46,9 @@ var showNext = function(){
 		$('#name').html(dish.name)
 		$('#adress').html(dish.restaurant.address)
 		$('#phoneNumber').html(dish.restaurant.phoneNumber)
-		$('#hours').html(dish.restaurant.hours)
+		$('#hours').html('Hours: ' + dish.restaurant.hours)
+		$('#website').html(dish.restaurant.website)
+		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
 	}).done();
 }
 
