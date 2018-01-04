@@ -3,7 +3,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Dinndr</title>
-<script src="/js/main.js"></script>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -20,26 +19,20 @@
 
 			<button class="liked" th:attr="data-dishid=${modelDish.id}"
 				onclick="viewMore()">I'm Interested!</button>
-			<button class="disliked" th:attr="data-dishid=${modelDish.id}"
-				onclick="nextPlease()">Meh.</button>
-			<div class="info" style='display: none'
-				th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+			<button class="disliked"  th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
+			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+			<div class="info" style='display: none'>
 				<ul>
 					<li id="description"></li>
 					<li id="price"></li>
 					<li id="name"></li>
-					<li id="adress"></li>
+					<li id="address"></li>
 					<li id="phoneNumber"></li>
-					<li id="hours"></li>
-<!--				<li th:text="${modelDish.description}"></li>
-					<li th:text="${modelDish.price}"></li>
-					<li th:text="${modelDish.restaurant.getName()}"></li>
-					<li th:text="${modelDish.restaurant.getAddress()}"></li>
-					<li th:text="${modelDish.restaurant.getPhoneNumber()}"></li>
-					<li th:text="${modelDish.restaurant.getHours()}"></li> -->
+					<li id="hours"></li>				
 				</ul>
 				<div id="map" style="width: 400px; height: 400px">Restaurant
 					map will go here</div>
+				</div>
 			</div>
 			<div class="next" style='display: none'>
 				<div id="nextImage"></div>
@@ -50,6 +43,7 @@
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="/js/main.js"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>

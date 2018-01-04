@@ -1,7 +1,12 @@
+/*add DOM element for viewMore
+add DOM element for nextPlease*/
+
+
 function viewMore() {
 	var x = document.querySelector(".info");
 	if (x.style.display === "none") {
 		x.style.display = "block";
+		google.maps.event.trigger(map, 'resize');
 	} else {
 		x.style.display = "none";
 	}
@@ -14,9 +19,9 @@ function viewMore() {
 	}).done();
 
 };
-
+var map;
 function myMap() {
-	var info = document.querySelector(".info");
+	var info = document.querySelector(".getMapInfo");
 
 	var myLat = parseFloat(info.dataset.latitude);
 	var myLng = parseFloat(info.dataset.longitude);
@@ -25,32 +30,42 @@ function myMap() {
 		lng : myLng
 	};
 
-	var map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 15,
-          center: myRestaurant
-        });
-        var marker = new google.maps.Marker({
-          position: myRestaurant,
-          map: map
-        });
-}; 
-
-var showNext = function(){
+	map = new google.maps.Map(document.getElementById("map"), {
+		zoom : 15,
+		center : myRestaurant,
+		disableDefaultUI: true,
+	    mapTypeControl: true,
+	    mapTypeControlOptions: {
+	        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+	        position: google.maps.ControlPosition.BOTTOM_LEFT
+	    }
+	});
+	var marker = new google.maps.Marker({
+		position : myRestaurant,
+		map : map
+	});
+	
+};
+function showNext() {
 	$.ajax({
-		url: 'http://localhost:8080/dishes/next',
-		method: 'GET'
+		url : 'http://localhost:8080/dishes/next',
+		method : 'GET'
 	}).done(function(dish) {
 		$('#dishImage').html('<img src="' + dish.image + '">');
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
 	}).done(function(restaurant) {
 		$('#name').html(restaurant.name)
-		$('#adress').html(restaurant.adress)
+		$('#address').html(restaurant.address)
 		$('#phoneNumber').html(restaurant.phoneNumber)
 		$('#hours').html(restaurant.hours)
 	});
 }
-
+/*
+ * var z = document.getElementById("dislikedid"); if (z.addEventListener){
+ * z.addEventListener("click", nextPlease()); } else if (z.attachEvent) {
+ * z.attachEvent("onclick", nextPlease()); };
+ */
 function nextPlease() {
 	var x = document.querySelector(".next");
 	if (x.style.display === "none") {
@@ -61,10 +76,8 @@ function nextPlease() {
 	var disliked = document.querySelector(".disliked");
 	var myId = parseFloat(disliked.dataset.dishid);
 	$.ajax({
-		url: 'http://localhost:8080/dishes/' + myId + '/disliked',
-		method: 'PUT'
-	}).done(showNext);	
-
+		url : 'http://localhost:8080/dishes/' + myId + '/disliked',
+		method : 'PUT'
+	}).done(showNext);
 };
-// .done and call function to get next dish from Next Dish controller
-// access object elements
+
