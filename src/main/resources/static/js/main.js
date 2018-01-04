@@ -56,7 +56,7 @@ var showNext = function(){
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
 		$('#name').html(dish.name)
-		$('#adress').html(dish.restaurant.address)
+		$('#address').html(dish.restaurant.address)
 		$('#phoneNumber').html(dish.restaurant.phoneNumber)
 		$('#hours').html(dish.restaurant.hours)
 	}).done();
@@ -64,6 +64,8 @@ var showNext = function(){
 
 function nextPlease() {
 	var x = document.querySelector(".next");
+	var b = document.querySelector(".image");
+	b.style.visibility = "hidden";
 	if (x.style.display === "none") {
 		x.style.display = "block";
 	} else {
