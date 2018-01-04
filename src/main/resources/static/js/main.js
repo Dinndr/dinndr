@@ -43,12 +43,11 @@ var showNext = function(){
 		$('#dishImage').html('<img src="' + dish.image + '">');
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
-	}).done(function(restaurant) {
-		$('#name').html(restaurant.name)
-		$('#adress').html(restaurant.adress)
-		$('#phoneNumber').html(restaurant.phoneNumber)
-		$('#hours').html(restaurant.hours)
-	});
+		$('#name').html(dish.name)
+		$('#adress').html(dish.restaurant.address)
+		$('#phoneNumber').html(dish.restaurant.phoneNumber)
+		$('#hours').html(dish.restaurant.hours)
+	}).done();
 }
 
 function nextPlease() {
