@@ -15,6 +15,9 @@
 			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}" style="width: 400px; height: 380px" />
 			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
 			<br></br>
+			<div class="next" style='display: none'>
+				<div id="nextImage"></div>
+			</div>
 
 			<button class="liked" th:attr="data-dishid=${modelDish.id}" onclick="viewMore()">I'm Interested!</button>
 			<button class="disliked" th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
@@ -24,16 +27,13 @@
 					<li id="description"></li>
 					<li id="price"></li>
 					<li id="name"></li>
-					<li id="adress"></li>
+					<li id="address"></li>
 					<li id="phoneNumber"></li>
 					<li id="hours"></li>
 					<li id="website"></li>
 					<li id="delivery"></li>
 				</ul>
 				<div id="map" style="width: 400px; height: 400px">Restaurant map will go here</div>
-			</div>
-			<div class="next" style='display: none'>
-				<div id="nextImage"></div>
 			</div>
 		</div>
 	</div>

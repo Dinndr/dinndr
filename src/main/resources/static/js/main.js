@@ -44,7 +44,7 @@ var showNext = function(){
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
 		$('#name').html(dish.name)
-		$('#adress').html(dish.restaurant.address)
+		$('#address').html(dish.restaurant.address)
 		$('#phoneNumber').html(dish.restaurant.phoneNumber)
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
 		$('#website').html(dish.restaurant.website)
