@@ -16,11 +16,10 @@
 			</div>
 			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}"
 				style="width: 400px; height: 380px" /><div id="dishImage" style="width: 400px; height: 380px"/><br></br>
-
+			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 			<button class="liked" th:attr="data-dishid=${modelDish.id}"
 				onclick="viewMore()">I'm Interested!</button>
 			<button class="disliked"  th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
-			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 			<div class="info" style='display: none'>
 				<ul>
 					<li id="description"></li>
