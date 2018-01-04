@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Restaurant {
 
@@ -26,7 +28,8 @@ public class Restaurant {
 	private double longitude;
 
 	@OneToMany(mappedBy = "restaurant")
-	private Set<Dish> restaurants;
+	@JsonIgnore
+	private Set<Dish> dishes;
 
 	public Restaurant() {
 
@@ -79,8 +82,8 @@ public class Restaurant {
 		return longitude;
 	}
 
-	public Set<Dish> getRestaurants() {
-		return restaurants;
+	public Set<Dish> getDishes() {
+		return dishes;
 	}
 
 }

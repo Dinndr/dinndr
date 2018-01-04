@@ -1,5 +1,3 @@
-/*add DOM element for viewMore
-add DOM element for nextPlease*/
 
 var myRestaurant;
 function viewMore() {
@@ -49,26 +47,21 @@ function myMap() {
 };
 
 
-function showNext() {
+var showNext = function(){
 	$.ajax({
-		url : 'http://localhost:8080/dishes/next',
-		method : 'GET'
+		url: 'http://localhost:8080/dishes/next',
+		method: 'GET'
 	}).done(function(dish) {
 		$('#dishImage').html('<img src="' + dish.image + '">');
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
-	}).done(function(restaurant) {
-		$('#name').html(restaurant.name)
-		$('#address').html(restaurant.address)
-		$('#phoneNumber').html(restaurant.phoneNumber)
-		$('#hours').html(restaurant.hours)
-	});
+		$('#name').html(dish.name)
+		$('#adress').html(dish.restaurant.address)
+		$('#phoneNumber').html(dish.restaurant.phoneNumber)
+		$('#hours').html(dish.restaurant.hours)
+	}).done();
 }
-/*
- * var z = document.getElementById("dislikedid"); if (z.addEventListener){
- * z.addEventListener("click", nextPlease()); } else if (z.attachEvent) {
- * z.attachEvent("onclick", nextPlease()); };
- */
+
 function nextPlease() {
 	var x = document.querySelector(".next");
 	if (x.style.display === "none") {

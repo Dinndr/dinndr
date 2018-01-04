@@ -41,7 +41,7 @@ public class Dish {
 
 	
 	@ManyToOne
-	@JsonIgnore
+	
 	private Restaurant restaurant;
 
 	public Dish(String name, String description, Restaurant restaurant, String price, String image, Tag... tags) {
