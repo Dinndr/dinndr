@@ -21,8 +21,8 @@
 			
 			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
 			
-			<button class="liked" th:attr="data-dishid=${modelDish.id}" onclick="viewMore()">I'm Interested!</button>
-			<button class="disliked" th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
+			<button class="liked" th:attr="data-dishid=${modelDish.id}">I'm Interested!</button>
+			<button class="disliked" th:attr="data-dishid=${modelDish.id}">Meh.</button>
 			
 			<div class="info" style='display: none'>
 				<ul>
