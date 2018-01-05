@@ -10,7 +10,6 @@ liked.onclick = function(){
 		x.style.display = "none";
 	}
 
-	var liked = document.querySelector(".liked");
 	var myId = parseFloat(liked.dataset.dishid);
 	$.ajax({
 		url : 'http://localhost:8080/dishes/' + myId + '/liked',
@@ -45,8 +44,7 @@ function myMap() {
 
 };
 
-var disliked = document.querySelector('.disliked');
-disliked.onclick = function(){
+var showNext = function() {
 	$.ajax({
 		url: 'http://localhost:8080/dishes/next',
 		method: 'GET'
@@ -63,7 +61,8 @@ disliked.onclick = function(){
 	}).done();
 }
 
-function nextPlease() {
+var disliked = document.querySelector('.disliked');
+disliked.onclick = function(){
 	var x = document.querySelector(".next");
 	var b = document.querySelector(".image");
 	b.style.visibility = "hidden";
