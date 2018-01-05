@@ -29,10 +29,10 @@ public class NextDishController {
 	@RequestMapping(value = "/dishes/next", method = RequestMethod.GET)
 	public Dish findNextDish() {
 		UserProfile theOne = userProfileRepo.findOne(1L);
-		List<Dish> all = findEligibleDishes(theOne);
-		int index = new Random().nextInt(all.size());
+		List<Dish> eligible = findEligibleDishes(theOne);
+		int index = new Random().nextInt(eligible.size());
 		// Dish random = all.get(index);
-		log.info("New total of " + all.size());
+		log.info("New total of " + eligible.size());
 		return dishRepo.findOne((long) index);
 
 	}

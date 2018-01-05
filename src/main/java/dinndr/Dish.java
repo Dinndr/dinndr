@@ -53,7 +53,7 @@ public class Dish {
 		this.tags = new HashSet<>(Arrays.asList(tags));
 	}
 
-	public Dish() {
+	private Dish() {
 
 	}
 
@@ -94,6 +94,21 @@ public class Dish {
 	public String toString() {
 		return name;
 	}
+
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	/*@Override
+	public boolean equals(Object obj) {
+		if(obj == null)
+		return false;
+		if(getClass() != obj.getClass())
+		return false;
+		
+		return true;
+	}*/
 	
 	
 

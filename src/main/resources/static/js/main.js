@@ -53,12 +53,14 @@ var showNext = function(){
 		method: 'GET'
 	}).done(function(dish) {
 		$('#dishImage').html('<img src="' + dish.image + '">');
-		$('#description').html(dish.description)
-		$('#price').html(dish.price)
-		$('#name').html(dish.name)
-		$('#address').html(dish.restaurant.address)
-		$('#phoneNumber').html(dish.restaurant.phoneNumber)
-		$('#hours').html(dish.restaurant.hours)
+		$('#description').html(dish.description);
+		$('#price').html(dish.price);
+		$('#name').html(dish.name);
+		$('#address').html(dish.restaurant.address);
+		$('#phoneNumber').html(dish.restaurant.phoneNumber);
+		$('#hours').html(dish.restaurant.hours);
+		$('.disliked').attr('data-dishid',dish.id);
+		$('.liked').attr('data-dishid',dish.id);
 	}).done();
 }
 
