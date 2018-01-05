@@ -79,4 +79,3 @@ function nextPlease() {
 		method : 'PUT'
 	}).done(showNext);
 };
-
