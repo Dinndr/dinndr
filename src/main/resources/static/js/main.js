@@ -1,6 +1,6 @@
-
+var liked = document.querySelector('.liked');
 var myRestaurant;
-function viewMore() {
+liked.onclick = function(){
 	var x = document.querySelector(".info");
 	if (x.style.display === "none") {
 		x.style.display = "block";
@@ -16,7 +16,6 @@ function viewMore() {
 		url : 'http://localhost:8080/dishes/' + myId + '/liked',
 		method : 'PUT'
 	}).done();
-
 };
 var map;
 function myMap() {
@@ -46,8 +45,8 @@ function myMap() {
 
 };
 
-
-var showNext = function(){
+var disliked = document.querySelector('.disliked');
+disliked.onclick = function(){
 	$.ajax({
 		url: 'http://localhost:8080/dishes/next',
 		method: 'GET'
