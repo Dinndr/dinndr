@@ -26,9 +26,20 @@
 			
 			<div class="info" style='display: none'>
 				<ul>
+					<li id="initialName" th:text="${modelDish.name}"></li>
+					<li id="initialDescription" th:text="${modelDish.description}"></li>
+					<li id="initialPrice" th:text="${modelDish.price}"></li>
+					<li id="initialRestaurantName" th:text="${modelDish.restaurant.name}"></li>
+					<li id="initialRestaurantAdress" th:text="${modelDish.restaurant.address}"></li>
+					<li id="initialRestaurantPhone" th:text="${modelDish.restaurant.phoneNumber}"></li>
+					<li id="initialRestaurantHours" th:text="${modelDish.restaurant.hours}"></li>
+					<li id="initialRestaurantWebsite" th:text="${modelDish.restaurant.website}"></li>
+					<li id="initialRestaurantDelivery" th:text="${modelDish.restaurant.delivery}"></li>
+					
+					<li id="name"></li>
 					<li id="description"></li>
 					<li id="price"></li>
-					<li id="name"></li>
+					<li id="restaurantName"></li>
 					<li id="address"></li>
 					<li id="phoneNumber"></li>
 					<li id="hours"></li>

@@ -41,8 +41,8 @@ function myMap() {
 		position : myRestaurant,
 		map : map
 	});
-
 };
+
 
 var showNext = function() {
 	$.ajax({
@@ -50,9 +50,10 @@ var showNext = function() {
 		method: 'GET'
 	}).done(function(dish) {
 		$('#dishImage').html('<img src="' + dish.image + '">');
+		$('#name').html(dish.name)
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
-		$('#name').html(dish.name)
+		$('#restaurantName').html(dish.restaurant.name)
 		$('#address').html(dish.restaurant.address)
 		$('#phoneNumber').html(dish.restaurant.phoneNumber)
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
