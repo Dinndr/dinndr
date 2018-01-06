@@ -79,4 +79,3 @@ disliked.onclick = function(){
 		method : 'PUT'
 	}).done(showNext);
 };
-
