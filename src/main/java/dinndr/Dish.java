@@ -100,16 +100,28 @@ public class Dish {
 		return name.hashCode();
 	}
 
-	/*@Override
-	public boolean equals(Object obj) {
-		if(obj == null)
-		return false;
-		if(getClass() != obj.getClass())
-		return false;
-		
-		return true;
-	}*/
-	
-	
-
+/*	 @Override
+	    public boolean equals(Object obj)
+	    {
+	         
+	    // checking if both the object references are 
+	    // referring to the same object.
+	    if(this == obj)
+	            return true;
+	         
+	        // it checks if the argument is of the 
+	        // type Geek by comparing the classes 
+	        // of the passed argument and this object.
+	        // if(!(obj instanceof Geek)) return false; ---> avoid.
+	        if(obj == null || obj.getClass()!= this.getClass())
+	            return false;
+	         
+	        // type casting of the argument. 
+	        Dish dish = (Dish) obj;
+	         
+	        // comparing the state of argument with 
+	        // the state of 'this' Object.
+	        return (dish.name == this.name && dish.id == this.id);
+	    }
+*/
 }

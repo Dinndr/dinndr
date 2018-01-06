@@ -33,7 +33,7 @@ public class NextDishController {
 		int index = new Random().nextInt(eligible.size());
 		// Dish random = all.get(index);
 		log.info("New total of " + eligible.size());
-		return dishRepo.findOne((long) index);
+		return eligible.get(index);
 
 	}
 
