@@ -1,6 +1,6 @@
-
+var liked = document.querySelector('.liked');
 var myRestaurant;
-function viewMore() {
+liked.onclick = function(){
 	var x = document.querySelector(".info");
 	if (x.style.display === "none") {
 		x.style.display = "block";
@@ -10,13 +10,11 @@ function viewMore() {
 		x.style.display = "none";
 	}
 
-	var liked = document.querySelector(".liked");
 	var myId = parseFloat(liked.dataset.dishid);
 	$.ajax({
 		url : 'http://localhost:8080/dishes/' + myId + '/liked',
 		method : 'PUT'
 	}).done();
-
 };
 var map;
 function myMap() {
@@ -43,28 +41,34 @@ function myMap() {
 		position : myRestaurant,
 		map : map
 	});
-
 };
 
 
-var showNext = function(){
+var showNext = function() {
 	$.ajax({
 		url: 'http://localhost:8080/dishes/next',
 		method: 'GET'
 	}).done(function(dish) {
 		$('#dishImage').html('<img src="' + dish.image + '">');
-		$('#description').html(dish.description);
-		$('#price').html(dish.price);
-		$('#name').html(dish.name);
-		$('#address').html(dish.restaurant.address);
-		$('#phoneNumber').html(dish.restaurant.phoneNumber);
-		$('#hours').html(dish.restaurant.hours);
+
 		$('.disliked').attr('data-dishid',dish.id);
 		$('.liked').attr('data-dishid',dish.id);
+
+		$('#name').html(dish.name)
+		$('#description').html(dish.description)
+		$('#price').html(dish.price)
+		$('#restaurantName').html(dish.restaurant.name)
+		$('#address').html(dish.restaurant.address)
+		$('#phoneNumber').html(dish.restaurant.phoneNumber)
+		$('#hours').html('Hours: ' + dish.restaurant.hours)
+		$('#website').html(dish.restaurant.website)
+		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+
 	}).done();
 }
 
-function nextPlease() {
+var disliked = document.querySelector('.disliked');
+disliked.onclick = function(){
 	var x = document.querySelector(".next");
 	var b = document.querySelector(".image");
 	b.style.visibility = "hidden";
@@ -80,4 +84,3 @@ function nextPlease() {
 		method : 'PUT'
 	}).done(showNext);
 };
-

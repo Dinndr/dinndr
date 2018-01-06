@@ -11,34 +11,44 @@
 
 	<div class="viewimage">
 		<div class="singleimage">
-			<div>
-				<!-- th:text="${modelDishRemove.size()}"> -->
-			</div>
-			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}"
-				style="width: 400px; height: 380px" /><div id="dishImage" style="width: 400px; height: 380px"/><br></br>
-			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
-			<button class="liked" th:attr="data-dishid=${modelDish.id}"
-				onclick="viewMore()">I'm Interested!</button>
-			<button class="disliked"  th:attr="data-dishid=${modelDish.id}" onclick="nextPlease()">Meh.</button>
-			<div class="info" style='display: none'>
-				<ul>
-					<li id="description"></li>
-					<li id="price"></li>
-					<li id="name"></li>
-					<li id="address"></li>
-					<li id="phoneNumber"></li>
-					<li id="hours"></li>				
-				</ul>
-				<div id="map" style="width: 400px; height: 400px">Restaurant
-					map will go here</div>
-				</div>
-			</div>
+			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}" style="width: 400px; height: 380px" />
+			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
+			<br></br>
+			
 			<div class="next" style='display: none'>
 				<div id="nextImage"></div>
 			</div>
-		</div>
-		<div>
-			<!-- th:text="${modelDishRemove.size()}"> -->
+			
+			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+			
+			<button class="liked" th:attr="data-dishid=${modelDish.id}">I'm Interested!</button>
+			<button class="disliked" th:attr="data-dishid=${modelDish.id}">Meh.</button>
+			
+			<div class="info" style='display: none'>
+				<ul>
+					<li id="initialName" th:text="${modelDish.name}"></li>
+					<li id="initialDescription" th:text="${modelDish.description}"></li>
+					<li id="initialPrice" th:text="${modelDish.price}"></li>
+					<li id="initialRestaurantName" th:text="${modelDish.restaurant.name}"></li>
+					<li id="initialRestaurantAdress" th:text="${modelDish.restaurant.address}"></li>
+					<li id="initialRestaurantPhone" th:text="${modelDish.restaurant.phoneNumber}"></li>
+					<li id="initialRestaurantHours" th:text="${modelDish.restaurant.hours}"></li>
+					<li id="initialRestaurantWebsite" th:text="${modelDish.restaurant.website}"></li>
+					<li id="initialRestaurantDelivery" th:text="${modelDish.restaurant.delivery}"></li>
+					
+					<li id="name"></li>
+					<li id="description"></li>
+					<li id="price"></li>
+					<li id="restaurantName"></li>
+					<li id="address"></li>
+					<li id="phoneNumber"></li>
+					<li id="hours"></li>
+					<li id="website"></li>
+					<li id="delivery"></li>
+				</ul>
+				<div id="map" style="width: 400px; height: 400px">Restaurant map will go here</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -46,4 +56,4 @@
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
-</html>
+</html>	
