@@ -50,6 +50,10 @@ var showNext = function() {
 		method: 'GET'
 	}).done(function(dish) {
 		$('#dishImage').html('<img src="' + dish.image + '">');
+
+		$('.disliked').attr('data-dishid',dish.id);
+		$('.liked').attr('data-dishid',dish.id);
+
 		$('#name').html(dish.name)
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
@@ -59,6 +63,7 @@ var showNext = function() {
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
 		$('#website').html(dish.restaurant.website)
 		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+
 	}).done();
 }
 
