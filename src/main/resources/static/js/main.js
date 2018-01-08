@@ -56,7 +56,7 @@ var showNext = function() {
 
 		$('#name').html(dish.name)
 		$('#description').html(dish.description)
-		$('#price').html(dish.price)
+		$('#price').html(dish.price)	
 		$('#restaurantName').html(dish.restaurant.name)
 		$('#address').html(dish.restaurant.address)
 		$('#phoneNumber').html(dish.restaurant.phoneNumber)

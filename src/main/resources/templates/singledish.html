@@ -7,11 +7,10 @@
 
 </head>
 <body>
-	<h1>Dinndr</h1>
-
+	<h1></h1>
+<div class="bg">
 	<div class="viewimage">
-		<div class="singleimage">
-			<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}" style="width: 400px; height: 380px" />
+		<div class="singleimage">	<!-- 	<img class="image" th:src="${modelDish.image}" alt="${modelDish.name}" style="width: 400px; height: 380px" />  -->
 			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
 			<br></br>
 			
@@ -20,13 +19,13 @@
 			</div>
 			
 			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
-			
+			<button class="start">Start</button>
 			<button class="liked" th:attr="data-dishid=${modelDish.id}">I'm Interested!</button>
-			<button class="disliked" th:attr="data-dishid=${modelDish.id}">Meh.</button>
+			<button class="disliked" th:attr="data-dishid=${modelDish.id}">Not Interested</button>
 			
 			<div class="info" style='display: none'>
 				<ul>
-					<li id="initialName" th:text="${modelDish.name}"></li>
+					<!-- <li id="initialName" th:text="${modelDish.name}"></li>
 					<li id="initialDescription" th:text="${modelDish.description}"></li>
 					<li id="initialPrice" th:text="${modelDish.price}"></li>
 					<li id="initialRestaurantName" th:text="${modelDish.restaurant.name}"></li>
@@ -35,7 +34,7 @@
 					<li id="initialRestaurantHours" th:text="${modelDish.restaurant.hours}"></li>
 					<li id="initialRestaurantWebsite" th:text="${modelDish.restaurant.website}"></li>
 					<li id="initialRestaurantDelivery" th:text="${modelDish.restaurant.delivery}"></li>
-					
+					 -->
 					<li id="name"></li>
 					<li id="description"></li>
 					<li id="price"></li>
@@ -50,6 +49,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="/js/main.js"></script>
