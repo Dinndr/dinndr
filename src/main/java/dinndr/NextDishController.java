@@ -30,10 +30,15 @@ public class NextDishController {
 	public Dish findNextDish() {
 		UserProfile theOne = userProfileRepo.findOne(1L);
 		List<Dish> eligible = findEligibleDishes(theOne);
-		int index = new Random().nextInt(eligible.size());
-		// Dish random = all.get(index);
+		List<Dish> likedDishes = findLikedDishes(theOne);
 		log.info("New total of " + eligible.size());
-		return eligible.get(index);
+		if (eligible.size() > 0) {
+			int eligibleIndex = new Random().nextInt(eligible.size());
+			return eligible.get(eligibleIndex);
+		} else {
+			int eligibleLikedIndex = new Random().nextInt(likedDishes.size());
+			return likedDishes.get(eligibleLikedIndex);
+		}
 
 	}
 
@@ -48,5 +53,12 @@ public class NextDishController {
 		eligible.removeAll(profile.getDisliked());
 
 		return eligible;
+	}
+
+	private List<Dish> findLikedDishes(UserProfile profile) {
+
+		List<Dish> likedEligible = new ArrayList<>(profile.getLiked());
+
+		return likedEligible;
 	}
 }
