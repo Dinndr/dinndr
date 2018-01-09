@@ -16,6 +16,31 @@ liked.onclick = function(){
 		method : 'PUT'
 	}).done();
 };
+
+var showNext = function() {
+	$.ajax({
+		url: 'http://localhost:8080/dishes/next',
+		method: 'GET'
+	}).done(function(dish) {
+		$('#dishImage').html('<img src="' + dish.image + '">');
+
+		$('.disliked').attr('data-dishid',dish.id);
+		$('.liked').attr('data-dishid',dish.id);
+		$('.getMapInfo').attr('data-longitude',dish.restaurant.longitude)
+		$('.getMapInfo').attr('data-latitude',dish.restaurant.latitude)
+		$('#name').html(dish.name)
+		$('#description').html(dish.description)
+		$('#price').html(dish.price)
+		$('#restaurantName').html(dish.restaurant.name)
+		$('#address').html(dish.restaurant.address)
+		$('#phoneNumber').html(dish.restaurant.phoneNumber)
+		$('#hours').html('Hours: ' + dish.restaurant.hours)
+		$('#website').html(dish.restaurant.website)
+		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+
+	}).done(myMap);
+}
+
 var map;
 function myMap() {
 	var info = document.querySelector(".getMapInfo");
@@ -44,43 +69,45 @@ function myMap() {
 };
 
 
-var showNext = function() {
-	$.ajax({
-		url: 'http://localhost:8080/dishes/next',
-		method: 'GET'
-	}).done(function(dish) {
-		$('#dishImage').html('<img src="' + dish.image + '">');
-
-		$('.disliked').attr('data-dishid',dish.id);
-		$('.liked').attr('data-dishid',dish.id);
-
-		$('#name').html(dish.name)
-		$('#description').html(dish.description)
-		$('#price').html(dish.price)	
-		$('#restaurantName').html(dish.restaurant.name)
-		$('#address').html(dish.restaurant.address)
-		$('#phoneNumber').html(dish.restaurant.phoneNumber)
-		$('#hours').html('Hours: ' + dish.restaurant.hours)
-		$('#website').html(dish.restaurant.website)
-		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
-
-	}).done();
-}
 
 var disliked = document.querySelector('.disliked');
 disliked.onclick = function(){
 	var x = document.querySelector(".next");
-	var b = document.querySelector(".image");
-	b.style.visibility = "hidden";
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
 	var disliked = document.querySelector(".disliked");
 	var myId = parseFloat(disliked.dataset.dishid);
 	$.ajax({
 		url : 'http://localhost:8080/dishes/' + myId + '/disliked',
 		method : 'PUT'
 	}).done(showNext);
+};
+
+$( document ).ready(function() {
+	disliked.style.display = 'none';
+	liked.style.display = 'none';
+});
+
+var start = document.querySelector('.start');
+start.onclick = function(){
+	$.ajax({
+		url: 'http://localhost:8080/dishes/next',
+		method: 'GET'
+	}).done(function(dish) {
+		$('#dishImage').html('<img src="' + dish.image + '">');
+		$('.disliked').attr('data-dishid',dish.id);
+		$('.liked').attr('data-dishid',dish.id);
+		$('.getMapInfo').attr('data-longitude',dish.restaurant.longitude)
+		$('.getMapInfo').attr('data-latitude',dish.restaurant.latitude)
+		$('#name').html(dish.name)
+		$('#description').html(dish.description)
+		$('#price').html(dish.price)
+		$('#restaurantName').html(dish.restaurant.name)
+		$('#address').html(dish.restaurant.address)
+		$('#phoneNumber').html(dish.restaurant.phoneNumber)
+		$('#hours').html('Hours: ' + dish.restaurant.hours)
+		$('#website').html(dish.restaurant.website)
+		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+	start.style.display = 'none';
+	disliked.style.display = 'inline-block';
+	liked.style.display = 'inline-block';
+	}).done(myMap);
 };
