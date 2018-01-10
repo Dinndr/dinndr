@@ -21,7 +21,7 @@ liked.onclick = function() {
 	$.ajax({
 		url : 'http://localhost:8080/dishes/' + likedId + '/liked',
 		method : 'PUT'
-	}).done();
+	});
 };
 
 var showNextDish = function() {
@@ -83,14 +83,10 @@ disliked.onclick = function() {
 
 var viewMoreDishesAfterLike = document.querySelector('.nextdish');
 viewMoreDishesAfterLike.onclick = function() {
-	if (next.style.display === "none") {
 		next.style.display = "block";
 		info.style.display = "none";
 		showNextDish();
 		showNextDishButton.style.visibility = "hidden";
 		var hideDislikeButton = document.querySelector(".disliked");
 		hideDislikeButton.style.visibility = "visible";
-	} else {
-		next.style.display = "none";
-	}
 };
