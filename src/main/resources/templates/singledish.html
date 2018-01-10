@@ -12,11 +12,6 @@
 <div class="bg">
 	<div class="viewimage">
 		<div class="singleimage">
-
-			<div class="logo">
-				<img src="/images/dinndr.png"></img>
-			</div>
-
 			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
 			<br></br>
 			
@@ -25,17 +20,10 @@
 			</div>
 			
 				<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
-			<button class="start"><span>Start </span></button>
-
-
-
-
+			<button class="start">Start</button>
 			<button class="liked"><span>Looks Delicious! </span></button>
-
-
 			<button class="disliked"><span>Pass! </span></button>
-
-			<button class="nextDish"><span>Show More </span></button>
+			<button class="nextdish"><span>Show More! </span></button>
 						
 			<div class="info" style='display: none'>
 				<ul>
@@ -55,7 +43,7 @@
 		</div>
 	</div>
 	</div>
-</div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="/js/initial.js"></script>
 	<script src="/js/main.js"></script>

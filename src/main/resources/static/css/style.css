@@ -120,7 +120,7 @@ color: #f2ad9f;
 
 /*showMore*/
 
-.nextDish {
+.nextdish {
   grid-column: 1/3;
   grid-row: 2/3;
   border-radius: 4px;
@@ -136,14 +136,14 @@ color: #f2ad9f;
   margin: 5px;
 }
 
-.nextDish span{
+.nextdish span{
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.nextDish span:after{
+.nextdish span:after{
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -153,11 +153,11 @@ color: #f2ad9f;
   color: #f2ad9f;
 }
 
-.nextDish:hover span{
+.nextdish:hover span{
   padding-right: 25px;
 }
 
-.nextDish:hover span:after{
+.nextdish:hover span:after{
   opacity: 1;
   right: 0;
 }
