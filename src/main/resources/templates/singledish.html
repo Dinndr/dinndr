@@ -15,14 +15,17 @@
 			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
 			<br></br>
 			
+				
+			
+			
 			<div class="next" style='display: none'>
 				<div id="nextImage"></div>
 			</div>
 			
 				<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
-			<button class="start">Start</button>
-			<button class="liked"><span>Looks Delicious! </span></button>
-			<button class="disliked"><span>Pass! </span></button>
+			<button class="start"><span>Start </span></button>
+			<button class="liked">Looks Delicious!</button>
+			<button class="disliked">Pass!</button>
 			<button class="nextdish"><span>Show More! </span></button>
 						
 			<div class="info" style='display: none'>
