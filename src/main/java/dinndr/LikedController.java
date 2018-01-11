@@ -29,5 +29,4 @@ public class LikedController {
 		theOne = userProfileRepo.save(theOne);
 		log.info("We liked -> " + theOne.getLiked());
 	}
-
 }

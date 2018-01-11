@@ -17,49 +17,15 @@ import dinndr.DishRepo;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringWiringTest {
-	
+
 	@Resource
 	private DishRepo dishRepo;
-	
+
 	@Resource
 	private DinndrController dinndrController;
 
 	@Test
 	public void contextLoads() {
 	}
-
-//	@Test
-//	public void dishShouldHaveIdOfZero() {
-//		long underTest = dish.getId();
-//		assertEquals(0L, underTest);
-//	}
-//	
-//	@Test
-//	public void dishShouldHaveName() {
-//		String underTest = dish.getName();
-//		assertEquals(null, underTest);
-//	}
-//	
-//	@Test
-//	public void dishRepoShouldHaveCollection() {
-//		Collection<Dish> underTest = dishRepo.findAll();
-//		assertNotNull(underTest);
-//	}
-//	
-//	@Test
-//	public void dishRepoShouldFindOneDish() {
-//		long id = 0;
-//		Dish underTest = dishRepo.findOne(id);
-//		assertEquals(null, underTest);
-//	}
-//	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
