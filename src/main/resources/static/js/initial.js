@@ -1,10 +1,12 @@
 $(document).ready(function() {
 	disliked.style.visibility = 'hidden';
 	liked.style.visibility = 'hidden';
+	
 });
 
 var start = document.querySelector('.start');
 start.onclick = function() {
+	
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
 		method : 'GET'

@@ -28,28 +28,25 @@ public class NextDishController {
 
 	@RequestMapping(value = "/dishes/next", method = RequestMethod.GET)
 	public Dish findNextDish() {
-		UserProfile theOne = userProfileRepo.findOne(1L);
-		List<Dish> eligible = findEligibleDishes(theOne);
-		List<Dish> likedDishes = findLikedDishes(theOne);
-		log.info("New total of " + eligible.size());
-		if (eligible.size() > 0) {
-			int eligibleIndex = new Random().nextInt(eligible.size());
-			return eligible.get(eligibleIndex);
-		} else {
-			int eligibleLikedIndex = new Random().nextInt(likedDishes.size());
-			return likedDishes.get(eligibleLikedIndex);
-		}
+		 UserProfile theOne = userProfileRepo.findOne(1L);
+		 List<Dish> eligible = findEligibleDishes(theOne);
+		 List<Dish> likedDishes = findLikedDishes(theOne);
+		 log.info("New total of " + eligible.size());
+		 if (eligible.size() > 0) {
+		 int eligibleIndex = new Random().nextInt(eligible.size());
+		 return eligible.get(eligibleIndex);
+		 } else {
+		 int eligibleLikedIndex = new Random().nextInt(likedDishes.size());
+		 return likedDishes.get(eligibleLikedIndex);
+		 }
 
 	}
 
 	private List<Dish> findEligibleDishes(UserProfile profile) {
 		List<Dish> all = dishRepo.findAll();
 
-		// start with all
 		List<Dish> eligible = new ArrayList<>(all);
-		// remove liked
 		eligible.removeAll(profile.getLiked());
-		// remove disliked
 		eligible.removeAll(profile.getDisliked());
 
 		return eligible;
@@ -60,5 +57,13 @@ public class NextDishController {
 		List<Dish> likedEligible = new ArrayList<>(profile.getLiked());
 
 		return likedEligible;
+	}
+
+	@RequestMapping(value = "/dishes/liked/random", method = RequestMethod.GET)
+	public Dish findRandomLiked() {
+		UserProfile theOne = userProfileRepo.findOne(1L);
+		List<Dish> likedDishes = findLikedDishes(theOne);
+		int randomLikedIndex = new Random().nextInt(likedDishes.size());
+		return likedDishes.get(randomLikedIndex);
 	}
 }
