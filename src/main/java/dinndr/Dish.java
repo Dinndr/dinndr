@@ -11,18 +11,18 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class Dish {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	
 	private String name;
 
 	@Lob
 	private String description;
+	
 	private String price;
 	private String image;
 
@@ -37,9 +37,7 @@ public class Dish {
 		return tags;
 	}
 
-	
 	@ManyToOne
-	
 	private Restaurant restaurant;
 
 	public Dish(String name, String description, Restaurant restaurant, String price, String image, Tag... tags) {
@@ -98,28 +96,4 @@ public class Dish {
 		return name.hashCode();
 	}
 
-/*	 @Override
-	    public boolean equals(Object obj)
-	    {
-	         
-	    // checking if both the object references are 
-	    // referring to the same object.
-	    if(this == obj)
-	            return true;
-	         
-	        // it checks if the argument is of the 
-	        // type Geek by comparing the classes 
-	        // of the passed argument and this object.
-	        // if(!(obj instanceof Geek)) return false; ---> avoid.
-	        if(obj == null || obj.getClass()!= this.getClass())
-	            return false;
-	         
-	        // type casting of the argument. 
-	        Dish dish = (Dish) obj;
-	         
-	        // comparing the state of argument with 
-	        // the state of 'this' Object.
-	        return (dish.name == this.name && dish.id == this.id);
-	    }
-*/
 }
