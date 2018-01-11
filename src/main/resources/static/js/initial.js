@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	disliked.style.visibility = 'hidden';
 	liked.style.visibility = 'hidden';
-	
 });
 
 var start = document.querySelector('.start');

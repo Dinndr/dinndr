@@ -46,16 +46,19 @@ var showNextDish = function() {
 		url : 'http://localhost:8080/dishes/next',
 		method : 'GET'
 	}).done(function(dish) {
-		if(dish) {
+		if (dish) {
 			populateDish(dish);
 		} else {
-			// get random liked
-			console.log("Get a random liked dish");
+			// THIS IS WHERE TO IMPLEMENT THE HIDE BUTTONS FUNCTION FOR THE LAST
+			// DISH!!
+			$.ajax({
+				url : 'http://localhost:8080/dishes/liked/random',
+				method : 'GET'
+			}).done(populateDish);
 		}
 	}).done(myMap);
-	
-};
 
+};
 var map;
 function myMap() {
 	var info = document.querySelector('.getMapInfo');
@@ -93,10 +96,10 @@ disliked.onclick = function() {
 
 var viewMoreDishesAfterLike = document.querySelector('.nextdish');
 viewMoreDishesAfterLike.onclick = function() {
-		next.style.display = "block";
-		info.style.display = "none";
-		showNextDish();
-		showNextDishButton.style.visibility = "hidden";
-		var hideDislikeButton = document.querySelector(".disliked");
-		hideDislikeButton.style.visibility = "visible";
+	next.style.display = "block";
+	info.style.display = "none";
+	showNextDish();
+	showNextDishButton.style.visibility = "hidden";
+	var hideDislikeButton = document.querySelector(".disliked");
+	hideDislikeButton.style.visibility = "visible";
 };

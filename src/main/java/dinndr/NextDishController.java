@@ -28,18 +28,16 @@ public class NextDishController {
 
 	@RequestMapping(value = "/dishes/next", method = RequestMethod.GET)
 	public Dish findNextDish() {
-		 UserProfile theOne = userProfileRepo.findOne(1L);
-		 List<Dish> eligible = findEligibleDishes(theOne);
-		 List<Dish> likedDishes = findLikedDishes(theOne);
-		 log.info("New total of " + eligible.size());
-		 if (eligible.size() > 0) {
-		 int eligibleIndex = new Random().nextInt(eligible.size());
-		 return eligible.get(eligibleIndex);
-		 } else {
-		 int eligibleLikedIndex = new Random().nextInt(likedDishes.size());
-		 return likedDishes.get(eligibleLikedIndex);
-		 }
-
+		UserProfile theOne = userProfileRepo.findOne(1L);
+		List<Dish> eligible = findEligibleDishes(theOne);
+		List<Dish> likedDishes = findLikedDishes(theOne);
+		log.info("New total of " + eligible.size());
+		if (eligible.isEmpty()) {
+			return null;
+		} else {
+			int eligibleIndex = new Random().nextInt(eligible.size());
+			return eligible.get(eligibleIndex);
+		}
 	}
 
 	private List<Dish> findEligibleDishes(UserProfile profile) {
