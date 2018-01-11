@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	disliked.style.visibility = 'hidden';
-	liked.style.visibility = 'hidden';
+	disliked.style.display = 'none';
+	liked.style.display = 'none';
 });
 
 var start = document.querySelector('.start');
@@ -24,8 +24,8 @@ start.onclick = function() {
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
 		$('#website').html(dish.restaurant.website)
 		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
-		start.style.visibility = 'hidden';
-		disliked.style.visibility = 'visible';
-		liked.style.visibility = 'visible';
+		start.style.display = 'none';
+		disliked.style.display = 'inline';
+		liked.style.display = 'inline';
 	}).done(myMap);
 };

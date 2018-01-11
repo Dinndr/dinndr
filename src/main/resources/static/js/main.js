@@ -1,5 +1,5 @@
 var showNextDishButton = document.querySelector('.nextdish');
-showNextDishButton.style.visibility = 'hidden';
+showNextDishButton.style.display = 'none';
 var info = document.querySelector('.info');
 var next = document.querySelector('.next');
 
@@ -11,8 +11,8 @@ liked.onclick = function() {
 		info.style.display = 'block';
 		google.maps.event.trigger(map, 'resize');
 		map.setCenter(new google.maps.LatLng(myRestaurant));
-		hideDislikeButton.style.visibility = 'hidden';
-		showNextDishButton.style.visibility = 'visible';
+		hideDislikeButton.style.display = 'none';
+		showNextDishButton.style.display = 'inline';
 	} else {
 		info.style.display = 'none';
 	}
@@ -49,12 +49,13 @@ var showNextDish = function() {
 		if (dish) {
 			populateDish(dish);
 		} else {
-			// THIS IS WHERE TO IMPLEMENT THE HIDE BUTTONS FUNCTION FOR THE LAST
-			// DISH!!
 			$.ajax({
 				url : 'http://localhost:8080/dishes/liked/random',
 				method : 'GET'
 			}).done(populateDish);
+			disliked.style.display = 'none';
+			liked.style.display = 'none';
+			info.style.display = 'block';
 		}
 	}).done(myMap);
 
@@ -96,10 +97,10 @@ disliked.onclick = function() {
 
 var viewMoreDishesAfterLike = document.querySelector('.nextdish');
 viewMoreDishesAfterLike.onclick = function() {
-	next.style.display = "block";
-	info.style.display = "none";
+	next.style.display = 'block';
+	info.style.display = 'none';
 	showNextDish();
-	showNextDishButton.style.visibility = "hidden";
+	showNextDishButton.style.display = 'none';
 	var hideDislikeButton = document.querySelector(".disliked");
-	hideDislikeButton.style.visibility = "visible";
+	hideDislikeButton.style.display = 'inline';
 };
