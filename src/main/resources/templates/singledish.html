@@ -4,32 +4,37 @@
 <head>
 <title>Dinndr</title>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
-
+<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet" />
 </head>
 <body>
-	<h1></h1>
 <div class="grid">
-<div class="bg">
-	<div class="viewimage">
-		<div class="singleimage">
-			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
-			<br></br>
-			
-				
-			
-			
-			<div class="next" style='display: none'>
-				<div id="nextImage"></div>
+	<div class="bg">
+		<div id="dishImage" style="width: 400px; height: 380px"/>	
+		
+		<div class="dish_grid">	
+		<div class="start_grid">
+			<!-- Dinndr logo -->
+			<div class="logo">
+				<img src="/images/dinndr.png"></img>
 			</div>
-			
-				<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+			<!-- Start Button -->
 			<button class="start"><span>Start </span></button>
+		</div>
+		
+		
+			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+
+			<!-- Like button -->
 			<button class="liked">Looks Delicious!</button>
+			<!-- Disike button -->
 			<button class="disliked">Pass!</button>
+			<!-- Next Dish after liked dish -->
 			<button class="nextdish"><span>Show More! </span></button>
 						
+			<!-- Dish image and info -->
 			<div class="info" style='display: none'>
 				<ul>
+					<li class="next" id="nextImage"></li>
 					<li id="name"></li>
 					<li id="description"></li>
 					<li id="price"></li>
@@ -40,17 +45,16 @@
 					<li id="website"></li>
 					<li id="delivery"></li>
 				</ul>
+				<!-- map location for restaurant -->
 				<div id="map" style="width: 400px; height: 400px">Restaurant map will go here</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	</div>
-	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="/js/initial.js"></script>
 	<script src="/js/main.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
 </html>	

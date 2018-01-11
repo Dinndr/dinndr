@@ -1,23 +1,53 @@
 body, html {
     height: 100%;
     margin: 0;
+    font-family: 'Signika', sans-serif;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1f 1f 1f;
-    grid-template-rows: 1f 1f 1f;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-auto-flow: row;
+    border-style: solid;
+    border-color: red;
+}
+
+.start_grid {
+	display: grid;
+	grid-column: 2/ span 4;
+    grid-row: 1/ span 4;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    grid-auto-flow: row;
+    justify-items: center;
+    border-style: solid;
+    border-color: black;
+}
+
+.dish_grid {
+	display: grid;
+	grid-column: 1/ span 5;
+    grid-row: 1/ span 4;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-auto-flow: row;
+    border-style: solid;
+    border-color: blue;
 }
 
 .logo {
-    grid-column: 1/3;
-    grid-row: 1/2;
+    grid-column: 2;
+    grid-row: 2/3;
     align-items: center;
 }
 
 .bg {
     background-image: url("/images/bg.jpg");
-    height: 125%; 
+    height: 100%; 
+    width: 100%;
+    grid-column: 1/7;
+    grid-row: 1/6;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,8 +59,8 @@ body, html {
 
 /*start*/
 .start {
-  grid-column: 1/3;
-  grid-row: 2/3;
+  grid-column: 2;
+  grid-row: 3;
   border-radius: 4px;
   background-color: #323339;
   border: none;
@@ -72,6 +102,8 @@ body, html {
 
 /*liked*/
 .liked {
+	grid-column: 1;
+  	grid-row: 2;
     border: none;
     padding: 16px 32px;
     text-align: center;
@@ -96,6 +128,8 @@ color: #dfe2d2;
 
 /*disliked*/
 .disliked {
+	grid-column: 3;
+  	grid-row: 2/4;
     border: none;
     padding: 16px 32px;
     text-align: center;
@@ -121,8 +155,7 @@ color: #f2ad9f;
 /*showMore*/
 
 .nextdish {
-  grid-column: 1/3;
-  grid-row: 2/3;
+
   border-radius: 4px;
   background-color: #323339;
   border: none;
