@@ -13,11 +13,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Restaurant {
 
-	// Variables
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
 	private String name;
 	private String website;
 	private String address;
@@ -35,7 +34,8 @@ public class Restaurant {
 
 	}
 
-	public Restaurant(String name, String website, String address, String hours, String phoneNumber, String delivery, double latitude, double longitude) {
+	public Restaurant(String name, String website, String address, String hours, String phoneNumber, String delivery,
+			double latitude, double longitude) {
 		this.name = name;
 		this.website = website;
 		this.address = address;
@@ -45,8 +45,6 @@ public class Restaurant {
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
-
-	// Getters
 
 	public long getId() {
 		return id;
@@ -75,9 +73,11 @@ public class Restaurant {
 	public String getDelivery() {
 		return delivery;
 	}
+
 	public double getLatitude() {
 		return latitude;
 	}
+
 	public double getLongitude() {
 		return longitude;
 	}
@@ -85,5 +85,4 @@ public class Restaurant {
 	public Set<Dish> getDishes() {
 		return dishes;
 	}
-
 }

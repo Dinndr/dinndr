@@ -5,7 +5,6 @@ $(document).ready(function() {
 var logo = document.querySelector('.logo');
 var start = document.querySelector('.start');
 start.onclick = function() {
-	
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
 		method : 'GET'
@@ -22,7 +21,7 @@ start.onclick = function() {
 		$('#address').html(dish.restaurant.address)
 		$('#phoneNumber').html(dish.restaurant.phoneNumber)
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
-		$('#website').html(dish.restaurant.website)
+		$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.website + '</a>');
 		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
 		start.style.display = 'none';
 		disliked.style.display = 'inline';

@@ -313,7 +313,6 @@ public class DishPopulator implements CommandLineRunner {
 
 		Collection<Dish> disliked = new ArrayList<>();
 
-		
 		UserProfile newUser = new UserProfile(liked, disliked);
 		newUser = userProfileRepo.save(newUser);
 

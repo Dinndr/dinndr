@@ -29,5 +29,4 @@ public class DislikedController {
 		theOne = userProfileRepo.save(theOne);
 		log.info("We disliked -> " + theOne.getDisliked());
 	}
-
 }
