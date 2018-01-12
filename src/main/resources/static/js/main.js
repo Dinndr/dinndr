@@ -35,9 +35,9 @@ var populateDish = function(dish) {
 	$('#price').html(dish.price)
 	$('#restaurantName').html(dish.restaurant.name)
 	$('#address').html(dish.restaurant.address)
-	$('#phoneNumber').html(dish.restaurant.phoneNumber)
+	$('#phoneNumber').html('<a href="tel:' + dish.restaurant.phoneNumber + '">' + dish.restaurant.phoneNumber + '</a>');
 	$('#hours').html('Hours: ' + dish.restaurant.hours)
-	$('#website').html(dish.restaurant.website)
+	$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.website + '</a>');
 	$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
 };
 

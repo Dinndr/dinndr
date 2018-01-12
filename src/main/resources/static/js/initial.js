@@ -2,10 +2,9 @@ $(document).ready(function() {
 	disliked.style.display = 'none';
 	liked.style.display = 'none';
 });
-
+var logo = document.querySelector('.logo');
 var start = document.querySelector('.start');
 start.onclick = function() {
-
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
 		method : 'GET'
@@ -20,12 +19,13 @@ start.onclick = function() {
 		$('#price').html(dish.price)
 		$('#restaurantName').html(dish.restaurant.name)
 		$('#address').html(dish.restaurant.address)
-		$('#phoneNumber').html(dish.restaurant.phoneNumber)
+		$('#phoneNumber').html('<a href="tel:' + dish.restaurant.phoneNumber + '">' + dish.restaurant.phoneNumber + '</a>');
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
-		$('#website').html(dish.restaurant.website)
+		$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.website + '</a>');
 		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
 		start.style.display = 'none';
 		disliked.style.display = 'inline';
 		liked.style.display = 'inline';
+		logo.style.display = 'none';
 	}).done(myMap);
 };
