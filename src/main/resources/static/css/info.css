@@ -5,12 +5,16 @@
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	margin: 25px 50px 50px;
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-area: "map dishinfo";
+	padding: 10px;
 }
 #map {
 	border: solid green 5px;
+	grid-area: "map";
 }
 .dishinfo {
 	border: solid blue 5px;
 	font-weight: 800;
+	grid-area: "dishinfo";
 }
+
