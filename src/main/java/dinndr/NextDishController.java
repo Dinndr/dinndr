@@ -42,18 +42,14 @@ public class NextDishController {
 
 	private List<Dish> findEligibleDishes(UserProfile profile) {
 		List<Dish> all = dishRepo.findAll();
-
 		List<Dish> eligible = new ArrayList<>(all);
 		eligible.removeAll(profile.getLiked());
 		eligible.removeAll(profile.getDisliked());
-
 		return eligible;
 	}
 
 	private List<Dish> findLikedDishes(UserProfile profile) {
-
 		List<Dish> likedEligible = new ArrayList<>(profile.getLiked());
-
 		return likedEligible;
 	}
 

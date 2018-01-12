@@ -40,5 +40,4 @@ public class Tag {
 	public String getTaste() {
 		return taste;
 	}
-
 }
