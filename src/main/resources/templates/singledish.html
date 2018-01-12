@@ -4,48 +4,54 @@
 <head>
 <title>Dinndr</title>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/css/info.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
 	<h1></h1>
-<div class="grid">
-<div class="bg">
-	<div class="viewimage">
-		<div class="singleimage">
-			<div id="dishImage" class="theDishImage" style="width: 400px; height: 380px"/>
-			<br></br>
-			
-				
-			
-			
-			<div class="next" style='display: none'>
-				<div id="nextImage"></div>
-			</div>
-			
-				<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
-			<button class="start"><span>Start </span></button>
-			<button class="liked">Looks Delicious!</button>
-			<button class="disliked">Pass!</button>
-			<button class="nextdish"><span>Show More! </span></button>
-						
-			<div class="info" style='display: none'>
-				<ul>
-					<li id="name"></li>
-					<li id="description"></li>
-					<li id="price"></li>
-					<li id="restaurantName"></li>
-					<li id="address"></li>
-					<li id="phoneNumber"></li>
-					<li id="hours"></li>
-					<li id="website"></li>
-					<li id="delivery"></li>
-				</ul>
-				<div id="map" style="width: 400px; height: 400px">Restaurant map will go here</div>
+	<div class="grid">
+		<div class="bg">
+			<div class="viewimage">
+				<div class="singleimage">
+					<div id="dishImage" class="theDishImage"
+						style="width: 400px; height: 380px" />
+					<br></br>
+
+					<div class="next" style='display: none'>
+						<div id="nextImage"></div>
+					</div>
+
+					<div class="getMapInfo"
+						th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">
+						<button class="start">
+							<span>Start </span>
+						</button>
+						<button class="liked">Looks Delicious!</button>
+						<button class="disliked">Pass!</button>
+						<button class="nextdish">
+							<span>Show More! </span>
+						</button>
+
+						<div class="info" style='display: none'>
+							<div id="map" style="width: 400px; height: 400px">Restaurant
+								map will go here</div>
+							<div class="dishinfo">
+								<h1 id="name"></h1>
+								<p id="description"></p>
+								<p id="price"></p>
+								<h2 id="restaurantName"></h2>
+								<p id="address"></p>
+								<p id="phoneNumber"></p>
+								<p id="hours"></p>
+								<p id="website"></p>
+								<p id="delivery"></p>
+							</div>
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="/js/initial.js"></script>
@@ -53,4 +59,4 @@
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9zXXGyCC23E2uO-nLFXtcFE3TuyWtERU&amp;callback=myMap"></script>
 </body>
-</html>	
+</html>

@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+.info {
+	background-image: url("/images/menu-background.jpg");
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin: 25px 50px 50px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+#map {
+	border: solid green 5px;
+}
+.dishinfo {
+	border: solid blue 5px;
+	font-weight: 800;
+}
