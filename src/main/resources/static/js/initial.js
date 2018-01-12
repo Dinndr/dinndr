@@ -2,10 +2,9 @@ $(document).ready(function() {
 	disliked.style.display = 'none';
 	liked.style.display = 'none';
 });
-
+var logo = document.querySelector('.logo');
 var start = document.querySelector('.start');
 start.onclick = function() {
-
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
 		method : 'GET'
@@ -27,5 +26,6 @@ start.onclick = function() {
 		start.style.display = 'none';
 		disliked.style.display = 'inline';
 		liked.style.display = 'inline';
+		logo.style.display = 'none';
 	}).done(myMap);
 };
