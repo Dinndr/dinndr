@@ -1,5 +1,5 @@
 var showNextDishButton = document.querySelector('.nextdish');
-showNextDishButton.style.visibility = 'hidden';
+showNextDishButton.style.display = 'none';
 var info = document.querySelector('.info');
 var next = document.querySelector('.next');
 
@@ -11,8 +11,8 @@ liked.onclick = function() {
 		info.style.display = 'block';
 		google.maps.event.trigger(map, 'resize');
 		map.setCenter(new google.maps.LatLng(myRestaurant));
-		hideDislikeButton.style.visibility = 'hidden';
-		showNextDishButton.style.visibility = 'visible';
+		hideDislikeButton.style.display = 'none';
+		showNextDishButton.style.display = 'inline';
 	} else {
 		info.style.display = 'none';
 	}
@@ -24,28 +24,42 @@ liked.onclick = function() {
 	});
 };
 
+var populateDish = function(dish) {
+	$('#dishImage').html('<img src="' + dish.image + '">');
+	$('.disliked').attr('data-dishid', dish.id);
+	$('.liked').attr('data-dishid', dish.id);
+	$('.getMapInfo').attr('data-longitude', dish.restaurant.longitude)
+	$('.getMapInfo').attr('data-latitude', dish.restaurant.latitude)
+	$('#name').html(dish.name)
+	$('#description').html(dish.description)
+	$('#price').html(dish.price)
+	$('#restaurantName').html(dish.restaurant.name)
+	$('#address').html(dish.restaurant.address)
+	$('#phoneNumber').html(dish.restaurant.phoneNumber)
+	$('#hours').html('Hours: ' + dish.restaurant.hours)
+	$('#website').html(dish.restaurant.website)
+	$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+};
+
 var showNextDish = function() {
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
 		method : 'GET'
 	}).done(function(dish) {
-		$('#dishImage').html('<img src="' + dish.image + '">');
-		$('.disliked').attr('data-dishid', dish.id);
-		$('.liked').attr('data-dishid', dish.id);
-		$('.getMapInfo').attr('data-longitude', dish.restaurant.longitude)
-		$('.getMapInfo').attr('data-latitude', dish.restaurant.latitude)
-		$('#name').html(dish.name)
-		$('#description').html(dish.description)
-		$('#price').html(dish.price)
-		$('#restaurantName').html(dish.restaurant.name)
-		$('#address').html(dish.restaurant.address)
-		$('#phoneNumber').html(dish.restaurant.phoneNumber)
-		$('#hours').html('Hours: ' + dish.restaurant.hours)
-		$('#website').html(dish.restaurant.website)
-		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+		if (dish) {
+			populateDish(dish);
+		} else {
+			$.ajax({
+				url : 'http://localhost:8080/dishes/liked/random',
+				method : 'GET'
+			}).done(populateDish);
+			disliked.style.display = 'none';
+			liked.style.display = 'none';
+			info.style.display = 'block';
+		}
 	}).done(myMap);
-};
 
+};
 var map;
 function myMap() {
 	var info = document.querySelector('.getMapInfo');
@@ -83,10 +97,10 @@ disliked.onclick = function() {
 
 var viewMoreDishesAfterLike = document.querySelector('.nextdish');
 viewMoreDishesAfterLike.onclick = function() {
-		next.style.display = "block";
-		info.style.display = "none";
-		showNextDish();
-		showNextDishButton.style.visibility = "hidden";
-		var hideDislikeButton = document.querySelector(".disliked");
-		hideDislikeButton.style.visibility = "visible";
+	next.style.display = 'block';
+	info.style.display = 'none';
+	showNextDish();
+	showNextDishButton.style.display = 'none';
+	var hideDislikeButton = document.querySelector(".disliked");
+	hideDislikeButton.style.display = 'inline';
 };
