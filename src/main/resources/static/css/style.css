@@ -40,12 +40,6 @@ body, html {
     align-items: center;
 }
 
-.info {
-	grid-column: 5/8;
-  	grid-row: 3
-  	background: ;
-}
-
 /*start*/
 .start {
   grid-column: 6/8;
@@ -192,11 +186,7 @@ color: #f2ad9f;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	margin: 25px 50px 50px;
 	padding: 10px;
-}
-#map {
-	border: solid green 5px;
-}
-.dishinfo {
-	border: solid blue 5px;
-	font-weight: 800;
+	grid-column: 5/8;
+    grid-row: 2;
+    font-weight: 800;
 }
