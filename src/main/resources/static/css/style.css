@@ -184,3 +184,19 @@ color: #f2ad9f;
   opacity: 1;
   right: 0;
 }
+/*Info div*/
+
+.info {
+	background-image: url("/images/menu-background.jpg");
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin: 25px 50px 50px;
+	padding: 10px;
+}
+#map {
+	border: solid green 5px;
+}
+.dishinfo {
+	border: solid blue 5px;
+	font-weight: 800;
+}
