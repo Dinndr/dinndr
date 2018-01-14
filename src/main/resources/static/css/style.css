@@ -36,8 +36,8 @@ body, html {
     grid-row: 3;
     margin: auto;
     align-items: center;
-    padding-top: 111px;
-    box-shadow: 10px 10px 5px grey;
+    padding-top: 5px;
+    box-shadow: 10px 10px 5px black;
 }
 
 .info {
