@@ -13,6 +13,7 @@ liked.onclick = function() {
 		map.setCenter(new google.maps.LatLng(myRestaurant));
 		hideDislikeButton.style.display = 'none';
 		showNextDishButton.style.display = 'inline';
+		liked.style.display = 'none';
 	} else {
 		info.style.display = 'none';
 	}
@@ -33,11 +34,11 @@ var populateDish = function(dish) {
 	$('#name').html(dish.name)
 	$('#description').html(dish.description)
 	$('#price').html(dish.price)
-	$('#restaurantName').html(dish.restaurant.name)
+	$('#restaurantName').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.name + '</a>')
 	$('#address').html(dish.restaurant.address)
-	$('#phoneNumber').html(dish.restaurant.phoneNumber)
+	$('#phoneNumber').html('<a href="tel:' + dish.restaurant.phoneNumber + '">' + dish.restaurant.phoneNumber + '</a>');
 	$('#hours').html('Hours: ' + dish.restaurant.hours)
-	$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.website + '</a>');
+	$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.name + '</a>');
 	$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
 };
 
@@ -103,4 +104,5 @@ viewMoreDishesAfterLike.onclick = function() {
 	showNextDishButton.style.display = 'none';
 	var hideDislikeButton = document.querySelector(".disliked");
 	hideDislikeButton.style.display = 'inline';
+	liked.style.display = 'inline';
 };
