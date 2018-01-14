@@ -13,6 +13,7 @@ liked.onclick = function() {
 		map.setCenter(new google.maps.LatLng(myRestaurant));
 		hideDislikeButton.style.display = 'none';
 		showNextDishButton.style.display = 'inline';
+		liked.style.display = 'none';
 	} else {
 		info.style.display = 'none';
 	}
@@ -103,4 +104,5 @@ viewMoreDishesAfterLike.onclick = function() {
 	showNextDishButton.style.display = 'none';
 	var hideDislikeButton = document.querySelector(".disliked");
 	hideDislikeButton.style.display = 'inline';
+	liked.style.display = 'inline';
 };
