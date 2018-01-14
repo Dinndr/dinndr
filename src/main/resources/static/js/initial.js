@@ -1,9 +1,12 @@
 $(document).ready(function() {
 	disliked.style.display = 'none';
 	liked.style.display = 'none';
+	end.style.display = 'none';
 });
+var end = document.querySelector('.end');
 var logo = document.querySelector('.logo');
 var start = document.querySelector('.start');
+
 start.onclick = function() {
 	$.ajax({
 		url : 'http://localhost:8080/dishes/next',
