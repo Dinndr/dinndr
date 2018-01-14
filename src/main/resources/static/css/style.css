@@ -8,7 +8,7 @@ body, html {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-    text-shadow: 2px 2px 5px black;
+
 }
 
 .grid {
@@ -186,7 +186,25 @@ color: #f2ad9f;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	margin: 25px 50px 50px;
 	padding: 10px;
-	grid-column: 5/8;
-    grid-row: 2;
     font-weight: 800;
+    border: solid blue;
+    flex-flow: column wrap;
+}
+
+.info .map {
+    border: solid orange;
+}
+
+.phoneImg {
+	height: 30px;
+	width: 30px;
+}
+
+.deliveryImg {
+	width: 50px;
+}
+
+.end {
+	text-align: center;
+	 font-size: 50px;
 }

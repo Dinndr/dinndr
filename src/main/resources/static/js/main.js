@@ -57,6 +57,7 @@ var showNextDish = function() {
 			disliked.style.display = 'none';
 			liked.style.display = 'none';
 			info.style.display = 'block';
+			end.style.display = 'block';
 		}
 	}).done(myMap);
 

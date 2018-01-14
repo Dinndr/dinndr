@@ -26,24 +26,29 @@
 		<div class="next" id="nextImage"></div>
 		
 			<div class = "getMapInfo" th:attr="data-longitude=${modelDish.restaurant.longitude}, data-latitude=${modelDish.restaurant.latitude}">			
+			
 			<div class="info" style='display: none'>
-							<div id="map" style="width: 400px; height: 400px">Restaurant
-								map will go here</div>
+			<div class="map" id="map" style="width: 400px; height: 400px">Restaurant map will go here</div>
 							<div class="dishinfo">
 								<h1 id="name"></h1>
 								<p id="description"></p>
 								<p id="price"></p>
 								<h2 id="restaurantName"></h2>
 								<p id="address"></p>
-								<p id="phoneNumber"></p>
+								<img class="phoneImg" src="/images/phone.png"></img><p id="phoneNumber"></p>
 								<p id="hours"></p>
 								<p id="delivery"></p>
-								<img src="/images/deliverytruck.jpg" style="width: 50px;"/>
+								<img class="deliveryImg" src="/images/deliverytruck.jpg"/>
 							</div>
-
 						</div>
 					</div>
-				
+					
+					<div class="end">
+						<h2>This is your dish!</h2>
+					</div>
+					
+					
+					
 			</div>
 
 
