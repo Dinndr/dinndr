@@ -2,6 +2,7 @@ var showNextDishButton = document.querySelector('.nextdish');
 showNextDishButton.style.display = 'none';
 var info = document.querySelector('.info');
 var next = document.querySelector('.next');
+var dishImage = document.querySelector('#dishImage');
 
 var liked = document.querySelector('.liked');
 var myRestaurant;
@@ -14,6 +15,7 @@ liked.onclick = function() {
 		hideDislikeButton.style.display = 'none';
 		showNextDishButton.style.display = 'inline';
 		liked.style.display = 'none';
+		dishImage.style.display = 'none';
 	} else {
 		info.style.display = 'none';
 	}
@@ -40,6 +42,7 @@ var populateDish = function(dish) {
 	$('#hours').html('Hours: ' + dish.restaurant.hours)
 	$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.name + '</a>');
 	$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
+	$('#finalDishImage').html('<img src="' + dish.image + '">');
 };
 
 var showNextDish = function() {
@@ -49,6 +52,7 @@ var showNextDish = function() {
 	}).done(function(dish) {
 		if (dish) {
 			populateDish(dish);
+			dishImage.style.display = 'inline';
 		} else {
 			$.ajax({
 				url : 'http://localhost:8080/dishes/liked/random',
@@ -58,6 +62,7 @@ var showNextDish = function() {
 			liked.style.display = 'none';
 			info.style.display = 'block';
 			end.style.display = 'block';
+			dishImage.style.display = 'none';
 		}
 	}).done(myMap);
 
