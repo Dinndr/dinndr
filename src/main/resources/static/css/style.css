@@ -28,9 +28,8 @@ body, html {
 	grid-column: 2 / 3;
 	grid-row: 3;
     margin: auto;
-    align-items: center;
+    align-items: end;
     padding-top: 5px;
-    box-shadow: 10px 10px 5px black;
 }
 
 .start {
@@ -46,6 +45,7 @@ body, html {
   transition: all 0.5s;
   cursor: pointer;
   margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .start span{
@@ -87,6 +87,7 @@ body, html {
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .liked {
     background-color: #dfe2d2;
@@ -112,6 +113,7 @@ color: #dfe2d2;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .disliked {
     background-color: #f2ad9f;
@@ -136,6 +138,7 @@ color: #f2ad9f;
   transition: all 0.5s;
   cursor: pointer;
   margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .nextdish span{
