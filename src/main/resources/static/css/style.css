@@ -169,11 +169,23 @@ color: #f2ad9f;
 
 
 .modal-box {
-    background-image: url("/images/menu-background.jpg");
+    background-color: #DFE2D2;
+    color: #323339;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
  	margin: 25px 50px 50px;
 	padding: 10px;
     font-weight: 800;
+    border: solid;
+	border-color: #F26968;
+	border-radius: 15px;
+}
+
+.modal-box a:link {
+    color: #F26968;
+}
+
+.modal-box a:visited {
+	color: #323339;
 }
 
 .phoneImg {
