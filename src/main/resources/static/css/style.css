@@ -171,13 +171,14 @@ color: #f2ad9f;
 .modal-box {
     background-color: #DFE2D2;
     color: #323339;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family: 'Signika', sans-serif;
  	margin: 25px 50px 50px;
-	padding: 10px;
+	padding: 75px;
     font-weight: 800;
     border: solid;
 	border-color: #F26968;
 	border-radius: 15px;
+	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.40);
 }
 
 .modal-box a:link {
@@ -186,6 +187,17 @@ color: #f2ad9f;
 
 .modal-box a:visited {
 	color: #323339;
+}
+
+h1 {
+	border-bottom: 3px solid #F26968;
+}
+
+#map {
+	padding: 5px;
+	border: solid;
+	border-color: #6CBF84;
+	border-radius: 15px;
 }
 
 .phoneImg {
