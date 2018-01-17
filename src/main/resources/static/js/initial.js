@@ -20,11 +20,11 @@ start.onclick = function() {
 		$('#name').html(dish.name)
 		$('#description').html(dish.description)
 		$('#price').html(dish.price)
-		$('#restaurantName').html(dish.restaurant.name)
+		$('#restaurantName').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.name + '</a>')
 		$('#address').html(dish.restaurant.address)
 		$('#phoneNumber').html('<a href="tel:' + dish.restaurant.phoneNumber + '">' + dish.restaurant.phoneNumber + '</a>');
 		$('#hours').html('Hours: ' + dish.restaurant.hours)
-		$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.website + '</a>');
+		$('#website').html('<a href="' + dish.restaurant.website + '" target="_blank">' + dish.restaurant.name + '</a>');
 		$('#delivery').html('Delivery? ' + dish.restaurant.delivery)
 		start.style.display = 'none';
 		disliked.style.display = 'inline';
