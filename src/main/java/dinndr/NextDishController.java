@@ -39,6 +39,19 @@ public class NextDishController {
 			return eligible.get(eligibleIndex);
 		}
 	}
+	
+	@RequestMapping(value = "/dishes/restart", method = RequestMethod.GET)
+	public Dish findFreshDishes() {
+		UserProfile theOne = userProfileRepo.findOne(1L);
+		List<Dish> eligible = restartApp(theOne);
+		log.info("New total of " + eligible.size());
+		if (eligible.isEmpty()) {
+			return null;
+		} else {
+			int eligibleIndex = new Random().nextInt(eligible.size());
+			return eligible.get(eligibleIndex);
+		}
+	}
 
 	private List<Dish> findEligibleDishes(UserProfile profile) {
 		List<Dish> all = dishRepo.findAll();
@@ -46,6 +59,15 @@ public class NextDishController {
 		eligible.removeAll(profile.getLiked());
 		eligible.removeAll(profile.getDisliked());
 		return eligible;
+	}
+	
+	private List<Dish> restartApp(UserProfile profile) {
+		UserProfile theOne = userProfileRepo.findOne(1L);
+		List<Dish> all = dishRepo.findAll();
+		profile.getLiked().clear();
+		profile.getDisliked().clear();
+		theOne = userProfileRepo.save(theOne);
+		return all;
 	}
 
 	private List<Dish> findLikedDishes(UserProfile profile) {
