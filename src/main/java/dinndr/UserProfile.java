@@ -38,4 +38,9 @@ public class UserProfile {
 
 	public UserProfile() {
 	}
+
+	public void removeAll(Collection<Dish> liked2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

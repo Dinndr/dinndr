@@ -27,6 +27,7 @@ liked.onclick = function() {
 	});
 };
 
+
 var populateDish = function(dish) {
 	$('#dishImage').html('<img src="' + dish.image + '">');
 	$('.disliked').attr('data-dishid', dish.id);
@@ -63,6 +64,7 @@ var showNextDish = function() {
 			info.style.display = 'block';
 			end.style.display = 'block';
 			dishImage.style.display = 'none';
+			startOver.style.display = 'inline';
 		}
 	}).done(myMap);
 

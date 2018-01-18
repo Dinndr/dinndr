@@ -74,6 +74,47 @@ body, html {
   right: 0;
 }
 
+.startOver {
+  border-radius: 4px;
+  background-color: #323339;
+  border: white solid;
+  color: #dfe2d2;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.startOver span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.startOver span:after{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  color: #f2ad9f;
+}
+
+.startOver:hover span{
+  padding-right: 25px;
+}
+
+.startOver:hover span:after{
+  opacity: 1;
+  right: 0;
+}
+
 .liked {
 	grid-column: 1;
 	grid-row: 3;
@@ -127,12 +168,13 @@ color: #f2ad9f;
 }
 
 .nextdish {
+  grid-column: 2 / 3;
   border-radius: 4px;
   background-color: #323339;
-  border: none;
+  border: white solid;
   color: #dfe2d2;
   text-align: center;
-  font-size: 16px;
+  font-size: 28px;
   padding: 20px;
   width: 200px;
   transition: all 0.5s;

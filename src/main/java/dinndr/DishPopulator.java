@@ -167,112 +167,112 @@ public class DishPopulator implements CommandLineRunner {
 		Tag pork = new Tag("pork");
 		pork = tagRepo.save(pork);
 
-		Dish bonelessChicken = new Dish("Boneless Chicken",
-				"Boneless chicken pieces marinated in yogurt, fresh spices, and lemon juice, grilled on skewers in tandoor.",
-				tandooriGrill, "$10.00", "/images/tg-tandoorplatter.jpg", chicken, rice, spicy, savory, platter, meat);
-		bonelessChicken = dishRepo.save(bonelessChicken);
-		Dish goatQormaCurry = new Dish("Goat Qorma Curry",
-				"Marinated succulent meat cooked with fried onion, delicately flavored with saffron and simmered in a blend of yogurt and house spices. Qorma is a braising technique where the meat is first cooked briskly using high heat and then subjected to long, slow cooking using moist eat and minimum of added liquid",
-				tandooriGrill, "$14.00", "/images/tg-goatchops.jpg", meat, savory, spicy, gravy, platter);
-		goatQormaCurry = dishRepo.save(goatQormaCurry);
-		Dish chanaMasala = new Dish("Chana Masala",
-				"Chick peas delicately cooked with a hint of garlic, ginger, and onion. Seasoned with tamarind, house spices, and cilantro leaves.",
-				tandooriGrill, "$7.00", "/images/tg-chana-masala.jpg", vegetarian, gravy, savory, smallPlate, spicy);
-		chanaMasala = dishRepo.save(chanaMasala);
-		Dish chickenKathiRoll = new Dish("Chicken Kathi Roll",
-				"Boneless chicken pieces marinated in tandoori sauce and grilled in tandoor.", tandooriGrill, "$6.00",
-				"/images/tg-kebab-wrap.jpg", chicken, sandwich, wrap, fresh, savory);
-		chickenKathiRoll = dishRepo.save(chickenKathiRoll);
-		Dish rasMalai = new Dish("Ras Malai",
-				"Traditional delicacy, made with special cottage cheese, soaked in richly flavored sweet milk with a hint of saffron, almonds, pistachios, and cardamom, served chilled.",
-				tandooriGrill, "$2.00", "/images/tg-ras-malai.jpg", sweet, dessert, rich, spicy, creamy);
-		rasMalai = dishRepo.save(rasMalai);
-		Dish blueCheesePotatoChips = new Dish("Blue Cheese Potato Chips",
-				"A Cap City original, blue cheese, chives and Alfredo sauce", capCity, "$9.99", "/images/cc-chips.jpg",
-				smallPlate, vegetarian, cheese, savory, potatoes);
-		blueCheesePotatoChips = dishRepo.save(blueCheesePotatoChips);
-		Dish capCityDinerMeatloaf = new Dish("Cap City Diner Meatloaf",
-				"Buttermilk-chive mashed potatoes, wild mushrooms, broccoli, chili onion rings and BBQ gravy", capCity,
-				"$17.79", "/images/cc-meatloaf.jpg", beef, savory, potatoes, meat, rich);
-		capCityDinerMeatloaf = dishRepo.save(capCityDinerMeatloaf);
-		Dish pecanCrustedPorkChops = new Dish("Pecan Crusted Pork Chops",
-				"Cheddar-chipotle mashed potatoes, candied pecans, spinach, shallots, and an apple cider glaze",
-				capCity, "$21.99", "/images/cc-porkchops.jpg", pork, nutty, savory, potatoes, meat);
-		pecanCrustedPorkChops = dishRepo.save(pecanCrustedPorkChops);
-		Dish romanoCrustedChicken = new Dish("Romano Crusted Chicken",
-				"Crispy fried chicken, garlic buttered noodles, roasted tomato cream sauce", capCity, "$17.99",
-				"/images/cc-chicken.jpg", platter, chicken, pasta, tomato, creamy);
-		romanoCrustedChicken = dishRepo.save(romanoCrustedChicken);
-		Dish seriouslyBigChocolateCake = new Dish("Seriously Big Chocolate Cake",
-				"Our famous three-layer chocolate cake", capCity, "$7.99", "/images/cc-chocolatecake.jpg", dessert,
-				sweet, chocolate, cake, rich);
-		seriouslyBigChocolateCake = dishRepo.save(seriouslyBigChocolateCake);
-		Dish halfSlabSmokedStLouisCutSpareRibs = new Dish("Half Slab Smoked St Louis Cut Spare Ribs",
-				"Smoked spare ribs covered in your choice of Ray Ray's sauces or rubs: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, Vinegar Base Sauce, Ray Ray's Dry Rub, or Spicy Dry Rub.",
-				rayRays, "$11.00", "/images/ray-half-slab-smoked-st-louis-cut-spare-ribs.jpg", platter, savory,
-				american, bbq, pork);
-		halfSlabSmokedStLouisCutSpareRibs = dishRepo.save(halfSlabSmokedStLouisCutSpareRibs);
-		Dish jerkChicken = new Dish("Jerk Chicken",
-				"Boneless smoked chicken thighs cooked in jerk sauce and topped with pickled red cabbage and red onion.",
-				rayRays, "$7.00", "/images/ray-jerk-chicken.jpg", meat, savory, sandwich, chicken, bbq);
-		jerkChicken = dishRepo.save(jerkChicken);
-		Dish beefBrisket = new Dish("Beef Brisket",
-				"Served with your choice of sauce on top or on the side. Ray Ray's sauces: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, and Vinegar-Based Sauce ",
-				rayRays, "$8.00", "/images/ray-beef-brisket.jpg", meat, savory, sandwich, beef, bbq);
-		beefBrisket = dishRepo.save(beefBrisket);
-		Dish scratchMacNCheese = new Dish("Scratch Mac-N-Cheese",
-				"Noodles cooked to perfection and surounded by delicious cheesey goodness.", rayRays, "$4.00",
-				"/images/ray-scratch-mac-n-cheese.jpg", cheese, savory, american, vegetarian, pasta);
-		scratchMacNCheese = dishRepo.save(scratchMacNCheese);
-		Dish bananaPudding = new Dish("Banana Puddin'",
-				"This classic dessert is served exclusivley at Ray Ray's Clintonville location.", rayRays, "$3.00",
-				"/images/ray-banana-pudding.jpg", dessert, sweet, american, vegetarian, creamy);
-		bananaPudding = dishRepo.save(bananaPudding);
-		Dish spicyYumaPizza = new Dish("Spicy Yuma Pizza",
-				"Gouda/havarti blend, chorizo, jalepenos, corn, roasted red peppers and chipotle-spiked tomato sauce.",
-				harvestPizzeria, "$15.75", "images/harvest-spicyyuma.jpg", pizza, spicy, cheese, meat, savory);
-		spicyYumaPizza = dishRepo.save(spicyYumaPizza);
-		Dish pimentoCheese = new Dish("Pimento Cheese", "Pimento Cheese with sour dough , bread and butter pickles",
-				harvestPizzeria, "$7.00", "images/harvest-pimento.jpg", cheese, savory, smallPlate, creamy, nutty);
-		pimentoCheese = dishRepo.save(pimentoCheese);
-		Dish margheritaPizza = new Dish("Margherita Pizza", "Fresh Mozarella, Basil Pizza", harvestPizzeria, "$12.75",
-				"images/harvest-margherita.jpg", pizza, vegetarian, cheese, spicy, fresh);
-		margheritaPizza = dishRepo.save(margheritaPizza);
-		Dish meanGreenSalad = new Dish("Mean Green Salad",
-				"Spinach, arugula, black beluga lentils, avocado green goddess dressing", harvestPizzeria, "$6.00",
-				"images/harvest-meangreen.jpg", salad, vegetarian, healthy, greens, fresh);
-		meanGreenSalad = dishRepo.save(meanGreenSalad);
-		Dish buckeyeBrownie = new Dish("Buckeye Brownie", "Chocolate, Krema Peanut Butter, Vanilla Bean Ice Cream",
-				harvestPizzeria, "$7.00", "images/harvest-buckeye.jpg", dessert, creamy, sweet, chocolate, rich);
-		buckeyeBrownie = dishRepo.save(buckeyeBrownie);
-		Dish germanRoastPorkLoin = new Dish("German Roast Pork Loin",
-				"Tender roast pork loin served with redskin mashed potatoes and your choice of cranberry-apple compote or a rich demi glaze.",
-				mozarts, "$14.95", "images/mozarts-pork-loin-na.jpg", platter, pork, meat, savory, potatoes);
-		germanRoastPorkLoin = dishRepo.save(germanRoastPorkLoin);
-		Dish hamGorgonzolaSpatzle = new Dish("Ham & Gorgonzola Spatzle",
-				"House made spatzle and smokey Black Forest ham simmered in a creamy gorgonzola sauce.", mozarts,
-				"$12.95", "images/mozarts-spatzle.jpg", platter, creamy, pork, cheese, meat);
-		hamGorgonzolaSpatzle = dishRepo.save(hamGorgonzolaSpatzle);
-		Dish beefStroganoff = new Dish("Beef Stroganoff",
-				"Braised beef and portabella in a Marsala wine demi glace, topped with a dollop of sour cream and served with buttered spatzle.",
-				mozarts, "$15.95", "images/mozarts-beef-stroganoff.jpg", platter, meat, beef, gravy, creamy);
-		beefStroganoff = dishRepo.save(beefStroganoff);
-		Dish wienerSchnitzel = new Dish("Wiener Schnitzel",
-				"A lightly breaded, golden brown cutlet prepared in the traditional Viennese style. Served with house made buttered spatzle or redskin mashed potatoes along with your choice of ratatouille, fresh market vegetables, or a side salad.",
-				mozarts, "$15.95", "images/mozarts-wiener-schnitzel.jpg", platter, meat, gravy, rich, creamy);
-		wienerSchnitzel = dishRepo.save(wienerSchnitzel);
-		Dish chocolateGanacheTorte = new Dish("Chocolate Ganache Torte",
-				"Three layers of moist chocolate cake filled with chocolate buttercream and enrobed in a rich chocolate ganache.",
-				mozarts, "$12.00", "images/mozarts-torte.jpg", dessert, chocolate, creamy, sweet, rich);
-		chocolateGanacheTorte = dishRepo.save(chocolateGanacheTorte);
-		Dish quinoaTabouliSalad = new Dish("Quinoa Tabouli Salad",
-				"Quinoa, kale, cherry tomatoes, parsley and red onion in a lemon vinagrette with a tahini dressing drizzle",
-				acre, "$7.95", "images/acre-quinoa-salad.jpg", salad, vegetarian, healthy, greens, fresh);
-		quinoaTabouliSalad = dishRepo.save(quinoaTabouliSalad);
-		Dish moleBowl = new Dish("Mole Bowl",
-				"Roasted mushrooms, peppers and onions in a savory Mexican pepper sauce topped with a drizzle of avocado sour cream and pepitas over brown rice or substitute quinoa(add 1.50)",
-				acre, "$9.85", "images/acre-mole-bowl.jpg", savory, vegetarian, spicy, platter, gravy);
-		moleBowl = dishRepo.save(moleBowl);
+//		Dish bonelessChicken = new Dish("Boneless Chicken",
+//				"Boneless chicken pieces marinated in yogurt, fresh spices, and lemon juice, grilled on skewers in tandoor.",
+//				tandooriGrill, "$10.00", "/images/tg-tandoorplatter.jpg", chicken, rice, spicy, savory, platter, meat);
+//		bonelessChicken = dishRepo.save(bonelessChicken);
+//		Dish goatQormaCurry = new Dish("Goat Qorma Curry",
+//				"Marinated succulent meat cooked with fried onion, delicately flavored with saffron and simmered in a blend of yogurt and house spices. Qorma is a braising technique where the meat is first cooked briskly using high heat and then subjected to long, slow cooking using moist eat and minimum of added liquid",
+//				tandooriGrill, "$14.00", "/images/tg-goatchops.jpg", meat, savory, spicy, gravy, platter);
+//		goatQormaCurry = dishRepo.save(goatQormaCurry);
+//		Dish chanaMasala = new Dish("Chana Masala",
+//				"Chick peas delicately cooked with a hint of garlic, ginger, and onion. Seasoned with tamarind, house spices, and cilantro leaves.",
+//				tandooriGrill, "$7.00", "/images/tg-chana-masala.jpg", vegetarian, gravy, savory, smallPlate, spicy);
+//		chanaMasala = dishRepo.save(chanaMasala);
+//		Dish chickenKathiRoll = new Dish("Chicken Kathi Roll",
+//				"Boneless chicken pieces marinated in tandoori sauce and grilled in tandoor.", tandooriGrill, "$6.00",
+//				"/images/tg-kebab-wrap.jpg", chicken, sandwich, wrap, fresh, savory);
+//		chickenKathiRoll = dishRepo.save(chickenKathiRoll);
+//		Dish rasMalai = new Dish("Ras Malai",
+//				"Traditional delicacy, made with special cottage cheese, soaked in richly flavored sweet milk with a hint of saffron, almonds, pistachios, and cardamom, served chilled.",
+//				tandooriGrill, "$2.00", "/images/tg-ras-malai.jpg", sweet, dessert, rich, spicy, creamy);
+//		rasMalai = dishRepo.save(rasMalai);
+//		Dish blueCheesePotatoChips = new Dish("Blue Cheese Potato Chips",
+//				"A Cap City original, blue cheese, chives and Alfredo sauce", capCity, "$9.99", "/images/cc-chips.jpg",
+//				smallPlate, vegetarian, cheese, savory, potatoes);
+//		blueCheesePotatoChips = dishRepo.save(blueCheesePotatoChips);
+//		Dish capCityDinerMeatloaf = new Dish("Cap City Diner Meatloaf",
+//				"Buttermilk-chive mashed potatoes, wild mushrooms, broccoli, chili onion rings and BBQ gravy", capCity,
+//				"$17.79", "/images/cc-meatloaf.jpg", beef, savory, potatoes, meat, rich);
+//		capCityDinerMeatloaf = dishRepo.save(capCityDinerMeatloaf);
+//		Dish pecanCrustedPorkChops = new Dish("Pecan Crusted Pork Chops",
+//				"Cheddar-chipotle mashed potatoes, candied pecans, spinach, shallots, and an apple cider glaze",
+//				capCity, "$21.99", "/images/cc-porkchops.jpg", pork, nutty, savory, potatoes, meat);
+//		pecanCrustedPorkChops = dishRepo.save(pecanCrustedPorkChops);
+//		Dish romanoCrustedChicken = new Dish("Romano Crusted Chicken",
+//				"Crispy fried chicken, garlic buttered noodles, roasted tomato cream sauce", capCity, "$17.99",
+//				"/images/cc-chicken.jpg", platter, chicken, pasta, tomato, creamy);
+//		romanoCrustedChicken = dishRepo.save(romanoCrustedChicken);
+//		Dish seriouslyBigChocolateCake = new Dish("Seriously Big Chocolate Cake",
+//				"Our famous three-layer chocolate cake", capCity, "$7.99", "/images/cc-chocolatecake.jpg", dessert,
+//				sweet, chocolate, cake, rich);
+//		seriouslyBigChocolateCake = dishRepo.save(seriouslyBigChocolateCake);
+//		Dish halfSlabSmokedStLouisCutSpareRibs = new Dish("Half Slab Smoked St Louis Cut Spare Ribs",
+//				"Smoked spare ribs covered in your choice of Ray Ray's sauces or rubs: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, Vinegar Base Sauce, Ray Ray's Dry Rub, or Spicy Dry Rub.",
+//				rayRays, "$11.00", "/images/ray-half-slab-smoked-st-louis-cut-spare-ribs.jpg", platter, savory,
+//				american, bbq, pork);
+//		halfSlabSmokedStLouisCutSpareRibs = dishRepo.save(halfSlabSmokedStLouisCutSpareRibs);
+//		Dish jerkChicken = new Dish("Jerk Chicken",
+//				"Boneless smoked chicken thighs cooked in jerk sauce and topped with pickled red cabbage and red onion.",
+//				rayRays, "$7.00", "/images/ray-jerk-chicken.jpg", meat, savory, sandwich, chicken, bbq);
+//		jerkChicken = dishRepo.save(jerkChicken);
+//		Dish beefBrisket = new Dish("Beef Brisket",
+//				"Served with your choice of sauce on top or on the side. Ray Ray's sauces: Ray Ray's Sweet BBQ, Jalapeno BBQ, Habanero BBQ, and Vinegar-Based Sauce ",
+//				rayRays, "$8.00", "/images/ray-beef-brisket.jpg", meat, savory, sandwich, beef, bbq);
+//		beefBrisket = dishRepo.save(beefBrisket);
+//		Dish scratchMacNCheese = new Dish("Scratch Mac-N-Cheese",
+//				"Noodles cooked to perfection and surounded by delicious cheesey goodness.", rayRays, "$4.00",
+//				"/images/ray-scratch-mac-n-cheese.jpg", cheese, savory, american, vegetarian, pasta);
+//		scratchMacNCheese = dishRepo.save(scratchMacNCheese);
+//		Dish bananaPudding = new Dish("Banana Puddin'",
+//				"This classic dessert is served exclusivley at Ray Ray's Clintonville location.", rayRays, "$3.00",
+//				"/images/ray-banana-pudding.jpg", dessert, sweet, american, vegetarian, creamy);
+//		bananaPudding = dishRepo.save(bananaPudding);
+//		Dish spicyYumaPizza = new Dish("Spicy Yuma Pizza",
+//				"Gouda/havarti blend, chorizo, jalepenos, corn, roasted red peppers and chipotle-spiked tomato sauce.",
+//				harvestPizzeria, "$15.75", "images/harvest-spicyyuma.jpg", pizza, spicy, cheese, meat, savory);
+//		spicyYumaPizza = dishRepo.save(spicyYumaPizza);
+//		Dish pimentoCheese = new Dish("Pimento Cheese", "Pimento Cheese with sour dough , bread and butter pickles",
+//				harvestPizzeria, "$7.00", "images/harvest-pimento.jpg", cheese, savory, smallPlate, creamy, nutty);
+//		pimentoCheese = dishRepo.save(pimentoCheese);
+//		Dish margheritaPizza = new Dish("Margherita Pizza", "Fresh Mozarella, Basil Pizza", harvestPizzeria, "$12.75",
+//				"images/harvest-margherita.jpg", pizza, vegetarian, cheese, spicy, fresh);
+//		margheritaPizza = dishRepo.save(margheritaPizza);
+//		Dish meanGreenSalad = new Dish("Mean Green Salad",
+//				"Spinach, arugula, black beluga lentils, avocado green goddess dressing", harvestPizzeria, "$6.00",
+//				"images/harvest-meangreen.jpg", salad, vegetarian, healthy, greens, fresh);
+//		meanGreenSalad = dishRepo.save(meanGreenSalad);
+//		Dish buckeyeBrownie = new Dish("Buckeye Brownie", "Chocolate, Krema Peanut Butter, Vanilla Bean Ice Cream",
+//				harvestPizzeria, "$7.00", "images/harvest-buckeye.jpg", dessert, creamy, sweet, chocolate, rich);
+//		buckeyeBrownie = dishRepo.save(buckeyeBrownie);
+//		Dish germanRoastPorkLoin = new Dish("German Roast Pork Loin",
+//				"Tender roast pork loin served with redskin mashed potatoes and your choice of cranberry-apple compote or a rich demi glaze.",
+//				mozarts, "$14.95", "images/mozarts-pork-loin-na.jpg", platter, pork, meat, savory, potatoes);
+//		germanRoastPorkLoin = dishRepo.save(germanRoastPorkLoin);
+//		Dish hamGorgonzolaSpatzle = new Dish("Ham & Gorgonzola Spatzle",
+//				"House made spatzle and smokey Black Forest ham simmered in a creamy gorgonzola sauce.", mozarts,
+//				"$12.95", "images/mozarts-spatzle.jpg", platter, creamy, pork, cheese, meat);
+//		hamGorgonzolaSpatzle = dishRepo.save(hamGorgonzolaSpatzle);
+//		Dish beefStroganoff = new Dish("Beef Stroganoff",
+//				"Braised beef and portabella in a Marsala wine demi glace, topped with a dollop of sour cream and served with buttered spatzle.",
+//				mozarts, "$15.95", "images/mozarts-beef-stroganoff.jpg", platter, meat, beef, gravy, creamy);
+//		beefStroganoff = dishRepo.save(beefStroganoff);
+//		Dish wienerSchnitzel = new Dish("Wiener Schnitzel",
+//				"A lightly breaded, golden brown cutlet prepared in the traditional Viennese style. Served with house made buttered spatzle or redskin mashed potatoes along with your choice of ratatouille, fresh market vegetables, or a side salad.",
+//				mozarts, "$15.95", "images/mozarts-wiener-schnitzel.jpg", platter, meat, gravy, rich, creamy);
+//		wienerSchnitzel = dishRepo.save(wienerSchnitzel);
+//		Dish chocolateGanacheTorte = new Dish("Chocolate Ganache Torte",
+//				"Three layers of moist chocolate cake filled with chocolate buttercream and enrobed in a rich chocolate ganache.",
+//				mozarts, "$12.00", "images/mozarts-torte.jpg", dessert, chocolate, creamy, sweet, rich);
+//		chocolateGanacheTorte = dishRepo.save(chocolateGanacheTorte);
+//		Dish quinoaTabouliSalad = new Dish("Quinoa Tabouli Salad",
+//				"Quinoa, kale, cherry tomatoes, parsley and red onion in a lemon vinagrette with a tahini dressing drizzle",
+//				acre, "$7.95", "images/acre-quinoa-salad.jpg", salad, vegetarian, healthy, greens, fresh);
+//		quinoaTabouliSalad = dishRepo.save(quinoaTabouliSalad);
+//		Dish moleBowl = new Dish("Mole Bowl",
+//				"Roasted mushrooms, peppers and onions in a savory Mexican pepper sauce topped with a drizzle of avocado sour cream and pepitas over brown rice or substitute quinoa(add 1.50)",
+//				acre, "$9.85", "images/acre-mole-bowl.jpg", savory, vegetarian, spicy, platter, gravy);
+//		moleBowl = dishRepo.save(moleBowl);
 		Dish bbqRanchWrap = new Dish("BBQ Ranch Wrap",
 				"Roasted sweet potatoes, peppers and onions topped with bbq sauve, shredded cabbage and a drizzle of ranch over brown rice or quinoa (add 1.50)",
 				acre, "$9.45", "images/acre-bbq-ranch-wrap.jpg", wrap, potatoes, bbq, spicy, healthy);
