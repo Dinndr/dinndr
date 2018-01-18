@@ -87,4 +87,5 @@ start.onclick = function() {
 				liked.style.display = 'inline';
 				logo.style.display = 'none';
 			}).done(myMap);
+
 };
