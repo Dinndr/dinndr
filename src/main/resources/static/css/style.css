@@ -22,6 +22,8 @@ body, html {
     margin: auto;
     grid-column: 2 / 3;
     align-items: center;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.40);
+    border-radius: 15px;
 }
 
 .dishImage {
@@ -36,7 +38,6 @@ body, html {
   grid-column: 2 / 3;
   border-radius: 4px;
   background-color: #323339;
-  border: white solid;
   color: #dfe2d2;
   text-align: center;
   font-size: 28px;
